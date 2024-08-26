@@ -129,16 +129,108 @@ Permite administrar los dis, `Libro` y `Revista`, realizando las acciones de agr
 
 ## View
 
-### Ventana Principal
+#### Gestor Publicaciones - Ventana principal
 
 <div align= "center">
-  <img src="https://github.com/user-attachments/assets/a562329b-06a9-4341-b6ce-88bafb36103a" alt="Logo del proyecto: Hombre sosteniendo un libro en tonos azules">
+  <img src="https://github.com/user-attachments/assets/a562329b-06a9-4341-b6ce-88bafb36103a" alt="Ventana principal de gestor de publicaciones">
 </div>
 
-### Agregar libro
+---
+
+### Libro
+
+---
+
+#### Agregar Libro
 
 <div align= "center">
-  <img src="https://github.com/user-attachments/assets/e4e4da72-d28f-4214-86c8-2a62d7b1b702" alt="Logo del proyecto: Hombre sosteniendo un libro en tonos azules">
+  <img src="https://github.com/user-attachments/assets/e4e4da72-d28f-4214-86c8-2a62d7b1b702" alt="Ventana para agregar un libro">
+</div>
+
+#### Buscar Libro
+
+<div align= "center">
+  <img src="https://github.com/user-attachments/assets/d812aeae-174d-4f1d-bad8-8d8b3c754a95" alt="Ventana para buscar un libro">
+</div>
+
+#### Listar Libros
+
+<div align= "center">
+  <img src="https://github.com/user-attachments/assets/76d99cb7-e8fc-447b-9150-2a28bf27bda1" alt="Ventana para listar libros">
+</div>
+
+#### Eliminar Libro
+
+<div align= "center">
+  <img src="https://github.com/user-attachments/assets/12ccc4d7-c3d1-4958-9846-117ec9032241" alt="Ventana para eliminar un libro">
+</div>
+
+#### Calcular Precio Libros
+
+<div align= "center">
+  <img src="https://github.com/user-attachments/assets/7fce7538-6135-4ac5-ab3c-7d049e257644" alt="Ventana para calcular el precio total de los libros">
+</div>
+
+---
+
+### Revista
+
+---
+
+#### Agregar Revista
+
+<div align= "center">
+  <img src="https://github.com/user-attachments/assets/17ea49f5-cd99-4104-b146-768cd68cf878" alt="Ventana para agregar una revista">
+</div>
+
+#### Buscar Revista
+
+<div align= "center">
+  <img src="https://github.com/user-attachments/assets/c56dff8f-ec44-40c1-b509-dd0abe0e4ab9" alt="Ventana para buscar una revista">
+</div>
+
+#### Listar Revistas
+
+<div align= "center">
+  <img src="https://github.com/user-attachments/assets/d2f5feed-c21a-421a-a23e-cbbbe9f78d66" alt="Ventana para listar revistas">
+</div>
+
+#### Eliminar Revista
+
+<div align= "center">
+  <img src="https://github.com/user-attachments/assets/b2275028-89a1-4ba9-8789-35a5b69482e8" alt="Ventana para eliminar una revista">
+</div>
+
+#### Calcular Precio Revistas
+
+<div align= "center">
+  <img src="https://github.com/user-attachments/assets/11c38893-8b8d-4a12-b52e-5ac041798103" alt="Ventana para calcular el precio total de las revistas">
+</div>
+
+---
+
+### Editorial
+
+---
+
+#### Agregar Editorial
+
+<div align= "center">
+  <img src="https://github.com/user-attachments/assets/378281c4-033f-42c1-8266-477cd5983be2" alt="Ventana para agregar una editorial">
+</div>
+
+#### Listar Editoriales
+
+<div align= "center">
+  <img src="https://github.com/user-attachments/assets/356730b4-4ac8-4128-891f-c6c3648f1248" alt="Ventana para listar editoriales">
+</div>
+
+---
+
+#### Acerca de
+
+<div align= "center">
+  <img src="https://github.com/user-attachments/assets/673c21a1-b29c-4e7f-82c6-9c1f0dd411d4" alt="Ventana con información acerca los desarrolladores, próposito y versión del proyecto">
 </div>
 
 ---
