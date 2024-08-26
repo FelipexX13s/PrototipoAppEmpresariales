@@ -143,17 +143,28 @@ public class AgregarEditorial extends javax.swing.JFrame {
         String nombre = txtNombre.getText();
         String direccion = txtDireccion.getText();
         
-        if(servicioEditorial.agregarEditorial(nombre,direccion))
-        {
-            JOptionPane.showMessageDialog(this, "Editorial agregada exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            txtNombre.setText("");
-            txtDireccion.setText("");
-        }
-        else
-        {
-            JOptionPane.showMessageDialog(this, "Error: Esa Editorial ya existe!", "Error", JOptionPane.ERROR_MESSAGE);
-        }
+        int respuesta = servicioEditorial.agregarEditorial(nombre,direccion);
         
+        switch(respuesta)
+        {
+            case 0:
+            {
+                JOptionPane.showMessageDialog(this, "Editorial agregada exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                txtNombre.setText("");
+                txtDireccion.setText("");
+                break;
+            }
+            case 1:
+            {
+                JOptionPane.showMessageDialog(this, "Error: Campos incorrectos!", "Error", JOptionPane.ERROR_MESSAGE);
+                break;
+            }
+            case 2:
+            {
+                JOptionPane.showMessageDialog(this, "Error: Esa Editorial ya existe!", "Error", JOptionPane.ERROR_MESSAGE);
+                break;
+            }
+        }
     }//GEN-LAST:event_btnAgregarLibroActionPerformed
 
  

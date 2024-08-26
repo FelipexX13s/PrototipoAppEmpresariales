@@ -15,10 +15,15 @@ public class Editorial
     private String direccion;
 
     //Constructor
-    public Editorial(String nombre, String direccion) 
+    public Editorial(String nombre, String direccion) throws Exception 
     {
         this.nombre = nombre;
         this.direccion = direccion;
+        
+        if(nombre == null || nombre.isBlank() || direccion == null || direccion.isBlank())
+        {
+            throw new Exception();
+        }
     }
     
     //Gets y sets
@@ -40,11 +45,5 @@ public class Editorial
     public void setDireccion(String direccion) 
     {
         this.direccion = direccion;
-    }
-    
-    private void verificarInvariante()
-    {
-        assert nombre != null && !nombre.isBlank();
-        assert direccion != null && !direccion.isBlank();
     }
 }

@@ -26,22 +26,47 @@ public class ServicioPublicaciones {
     }
 
     //Métodos
-    public boolean agregarLibro(String titulo, String autor, double precio, boolean tapaDura, Editorial editorial) {
-        Libro libro = new Libro(titulo, autor, precio, tapaDura, editorial);
-        if (buscarLibro(libro.getTitulo()) == null) {
-            publicaciones.add(libro);
-            return true;
+    public int agregarLibro(String titulo, String autor, double precio, boolean tapaDura, Editorial editorial) 
+    {
+        Libro libro = null;
+        
+        try
+        {
+            libro = new Libro(titulo, autor, precio, tapaDura, editorial);
         }
-        return false;
+        catch(Exception e) 
+        {
+            return 1;
+        }
+        
+        if (buscarLibro(libro.getTitulo()) == null) 
+        {
+            publicaciones.add(libro);
+            return 0;
+        }
+      
+        return 2;
     }
 
-    public boolean agregarRevista(String titulo, String autor, double precio, int volumen, boolean suscrito) {
-        Revista revista = new Revista(titulo, autor, precio, volumen, suscrito);
-        if (buscarRevista(revista.getTitulo()) == null) {
-            publicaciones.add(revista);
-            return true;
+    public int agregarRevista(String titulo, String autor, double precio, int volumen, boolean suscrito) {
+        Revista revista = null;
+        
+        try
+        {
+            revista = new Revista(titulo, autor, precio, volumen, suscrito);
         }
-        return false;
+        catch(Exception e) 
+        {
+            return 1;
+        }
+        
+        if (buscarRevista(revista.getTitulo()) == null) 
+        {
+            publicaciones.add(revista);
+            return 0;
+        }
+      
+        return 2;
     }
 
     public Libro buscarLibro(String titulo) {

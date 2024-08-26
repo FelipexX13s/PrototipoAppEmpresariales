@@ -74,7 +74,7 @@ public class GUI extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestor Publicaciones");
 
-        ImageIcon imagenLogoGOD = new ImageIcon("C:/Empresariales/Semana4/prototipoPublicacion/src/main/java/data/logoPublicacion.png");
+        ImageIcon imagenLogoGOD = new ImageIcon("src/main/java/data/logoPublicacion.png");
         lblImagenLogo.setIcon(imagenLogoGOD);
 
         menuFile.setText("Archivo");

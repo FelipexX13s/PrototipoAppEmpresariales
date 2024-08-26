@@ -17,11 +17,16 @@ public class Libro extends Publicacion
     public static final double COSTO_TAPA_DURA = 4000;
 
     //Constructor
-    public Libro(String titulo, String autor, double precio, boolean tapaDura, Editorial editorial) 
+    public Libro(String titulo, String autor, double precio, boolean tapaDura, Editorial editorial) throws Exception 
     {
         super(titulo, autor, precio);
         this.tapaDura = tapaDura;
         this.editorial = editorial;
+        
+        if(editorial == null)
+        {
+            throw new Exception();
+        }
     }
 
     //Métodos
@@ -54,11 +59,5 @@ public class Libro extends Publicacion
     public void setEditorial(Editorial editorial) 
     {
         this.editorial = editorial;
-        verificarInvariante();
-    }
-    
-    private void verificarInvariante()
-    {
-        assert editorial != null;
     }
 }

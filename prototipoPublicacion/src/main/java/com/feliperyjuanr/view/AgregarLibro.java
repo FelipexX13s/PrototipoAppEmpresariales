@@ -211,22 +211,43 @@ public class AgregarLibro extends javax.swing.JFrame {
 
     private void btnAgregarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarLibroActionPerformed
         // TODO add your handling code here:
-        String titulo = txtTitulo.getText();
-        String autor = txtAutor.getText();
-        double precio = Double.parseDouble(txtPrecio.getText());
-        boolean tapaDura = chxTapaDura.isSelected();
+        
+        try
+        {
+            String titulo = txtTitulo.getText();
+            String autor = txtAutor.getText();
+            double precio = Double.parseDouble(txtPrecio.getText());
+            boolean tapaDura = chxTapaDura.isSelected();
 
-        if (servicioPublicacion.agregarLibro(titulo, autor, precio, tapaDura, servicioEditorial.buscarEditorial(cbxEditorial.getSelectedItem().toString()))) {
-            JOptionPane.showMessageDialog(this, "Libro agregado exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            txtTitulo.setText("");
-            txtAutor.setText("");
-            txtPrecio.setText("");
-            
-            chxTapaDura.setSelected(false);
-        } else {
-            JOptionPane.showMessageDialog(this, "Error: Ese Libro ya existe!", "Error", JOptionPane.ERROR_MESSAGE);
+            int respuesta = servicioPublicacion.agregarLibro(titulo, autor, precio, tapaDura, servicioEditorial.buscarEditorial(cbxEditorial.getSelectedItem().toString()));
+
+            switch(respuesta)
+            {
+                case 0:
+                {
+                    JOptionPane.showMessageDialog(this, "Libro agregado exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                    txtTitulo.setText("");
+                    txtAutor.setText("");
+                    txtPrecio.setText("");
+                    chxTapaDura.setSelected(false);
+                    break;
+                }
+                case 1:
+                {
+                    JOptionPane.showMessageDialog(this, "Error: Campos incorrectos o precio menor a 50!", "Error", JOptionPane.ERROR_MESSAGE);
+                    break;
+                }
+                case 2:
+                {
+                    JOptionPane.showMessageDialog(this, "Error: Ese Libro ya existe!", "Error", JOptionPane.ERROR_MESSAGE);
+                    break;
+                }
+            }
         }
-
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, "Error: El precio debe ser un numero!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnAgregarLibroActionPerformed
 
     private void cbxEditorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEditorialActionPerformed

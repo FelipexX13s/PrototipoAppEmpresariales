@@ -18,13 +18,16 @@ public abstract class Publicacion
     private double precio;
 
     //Constructor
-    public Publicacion(String titulo, String autor, double precio) 
+    public Publicacion(String titulo, String autor, double precio) throws Exception 
     {
         this.titulo = titulo;
         this.autor = autor;
         this.precio = precio;
         
-        verificarInvariante();
+        if(precio < 50 || titulo == null || titulo.isBlank() || autor == null || autor.isBlank())
+        {
+            throw new Exception();
+        }
     }
 
     //Métodos
@@ -59,15 +62,6 @@ public abstract class Publicacion
     public void setPrecio(double precio) 
     {
         this.precio = precio;
-        
-        verificarInvariante();
-    }
-    
-    private void verificarInvariante()
-    {
-        assert precio >= 50;
-        assert titulo != null && !titulo.isBlank();
-        assert autor != null && !autor.isBlank();
     }
 
 }

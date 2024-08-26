@@ -20,13 +20,23 @@ public class ServicioEditoriales {
         editoriales = new ArrayList<>();
     }
 
-    public boolean agregarEditorial(String nombre, String direccion) {
-        Editorial editorial = new Editorial(nombre, direccion);
+    public int agregarEditorial(String nombre, String direccion) {
+        Editorial editorial = null;
+        
+        try
+        {
+            editorial = new Editorial(nombre, direccion);
+        }
+        catch(Exception e)
+        {
+            return 1;
+        }
+        
         if (buscarEditorial(editorial.getNombre()) == null) {
             editoriales.add(editorial);
-            return true;
+            return 0;
         }
-        return false;
+        return 2;
     }
 
     public ArrayList<Editorial> listarEditoriales() {

@@ -16,13 +16,16 @@ public class Revista extends Publicacion implements Suscribible
     public static final double PORCENTAJE_DESCUENTO_SUSCRIPCION = 0.15;
 
     //Constructor
-    public Revista( String titulo, String autor, double precio, int volumen, boolean suscrito) 
+    public Revista( String titulo, String autor, double precio, int volumen, boolean suscrito) throws Exception 
     {
         super(titulo, autor, precio);
         this.volumen = volumen;
         this.suscrito = suscrito;
         
-        verificarInvariante();
+        if(volumen < 1)
+        {
+            throw new Exception();
+        }
     }
     
     //Métodos
@@ -63,11 +66,5 @@ public class Revista extends Publicacion implements Suscribible
     public void setVolumen(int volumen) 
     {
         this.volumen = volumen;
-        verificarInvariante();
-    }
-    
-    private void verificarInvariante()
-    {
-        assert volumen >= 1;
     }
 }

@@ -186,22 +186,44 @@ public class AgregarRevista extends javax.swing.JFrame {
 
     private void btnAgregarRevistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarRevistaActionPerformed
         // TODO add your handling code here:
-        String titulo = txtTitulo.getText();
-        String autor = txtAutor.getText();
-        double precio = Double.parseDouble(txtPrecio.getText());
-        int volumen = Integer.parseInt(txtVolumen.getText());
-        boolean suscrito = chxSuscrito.isSelected();
         
+        try
+        {
+            String titulo = txtTitulo.getText();
+            String autor = txtAutor.getText();
+            double precio = Double.parseDouble(txtPrecio.getText());
+            int volumen = Integer.parseInt(txtVolumen.getText());
+            boolean suscrito = chxSuscrito.isSelected();
 
-        if (servicioPublicacion.agregarRevista(titulo, autor, precio,volumen,suscrito)) {
-            JOptionPane.showMessageDialog(this, "Revista agregada exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
-            txtTitulo.setText("");
-            txtAutor.setText("");
-            txtPrecio.setText("");
-            txtVolumen.setText("");
-            chxSuscrito.setSelected(false);
-        } else {
-            JOptionPane.showMessageDialog(this, "Error: Esa Revista ya existe!", "Error", JOptionPane.ERROR_MESSAGE);
+            int respuesta = servicioPublicacion.agregarRevista(titulo, autor, precio,volumen,suscrito);
+
+            switch(respuesta)
+            {
+                case 0:
+                {
+                    JOptionPane.showMessageDialog(this, "Revista agregada exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                    txtTitulo.setText("");
+                    txtAutor.setText("");
+                    txtPrecio.setText("");
+                    txtVolumen.setText("");
+                    chxSuscrito.setSelected(false);
+                    break;
+                }
+                case 1:
+                {
+                    JOptionPane.showMessageDialog(this, "Error: Campos incorrectos, precio menor a 50 o volumen menor a 1!", "Error", JOptionPane.ERROR_MESSAGE);
+                    break;
+                }
+                case 2:
+                {
+                    JOptionPane.showMessageDialog(this, "Error: Esa Revista ya existe!", "Error", JOptionPane.ERROR_MESSAGE);
+                    break;
+                }
+            }
+        }
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(this, "Error: El precio y volumen deben ser números!", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnAgregarRevistaActionPerformed
 

@@ -199,7 +199,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="lblImagenLogo">
       <AuxValues>
-        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="ImageIcon imagenLogoGOD = new ImageIcon(&quot;C:/Empresariales/Semana4/prototipoPublicacion/src/main/java/data/logoPublicacion.png&quot;);&#xa;lblImagenLogo.setIcon(imagenLogoGOD);"/>
+        <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="ImageIcon imagenLogoGOD = new ImageIcon(&quot;src/main/java/data/logoPublicacion.png&quot;);&#xa;lblImagenLogo.setIcon(imagenLogoGOD);"/>
       </AuxValues>
     </Component>
   </SubComponents>
