@@ -227,6 +227,10 @@ Permite administrar los dis, `Libro` y `Revista`, realizando las acciones de agr
 
 ---
 
+### Ayuda
+
+---
+
 #### Acerca de
 
 <div align= "center">
