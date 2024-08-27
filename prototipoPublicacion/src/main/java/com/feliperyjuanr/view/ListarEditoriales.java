@@ -5,6 +5,7 @@
 package com.feliperyjuanr.view;
 
 import com.feliperyjuanr.services.ServicioEditoriales;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -130,10 +131,16 @@ public class ListarEditoriales extends javax.swing.JFrame {
 
         DefaultTableModel model = (DefaultTableModel) tblEditoriales.getModel();
         model.setRowCount(0);
-        for (int i = 0; i < servicioEditorial.listarEditoriales().size(); i++) {
-            model.addRow(new Object[]{
-                servicioEditorial.listarEditoriales().get(i).getNombre(), 
-                servicioEditorial.listarEditoriales().get(i).getDireccion()});
+        if (servicioEditorial.listarEditoriales().isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Error: No hay Editoriales para mostrar!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        else
+        {
+            for (int i = 0; i < servicioEditorial.listarEditoriales().size(); i++) {
+                model.addRow(new Object[]{
+                    servicioEditorial.listarEditoriales().get(i).getNombre(),
+                    servicioEditorial.listarEditoriales().get(i).getDireccion()});
+            }
         }
 
     }//GEN-LAST:event_btnListarActionPerformed
