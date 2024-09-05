@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author juanp
  */
-public class ListarLibros extends javax.swing.JFrame {
+public class ListarLibros extends javax.swing.JFrame implements IclaseB {
 
     private ServicioPublicaciones servicioPublicacion;
 
@@ -21,9 +21,36 @@ public class ListarLibros extends javax.swing.JFrame {
      */
     public ListarLibros(ServicioPublicaciones servicioPublicacion) {
         this.servicioPublicacion = servicioPublicacion;
+        servicioPublicacion.addGUIInteresadaB(this);
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+    }
+    
+    
+    public void cambioLibro()
+    {
+        DefaultTableModel model = (DefaultTableModel) tblLibros.getModel();
+        model.setRowCount(0);
+        
+        for (int i = 0; i < servicioPublicacion.listarLibros().size(); i++) 
+        {
+            model.addRow(new Object[]{
+                servicioPublicacion.listarLibros().get(i).getTitulo(),
+                servicioPublicacion.listarLibros().get(i).getAutor(),
+                servicioPublicacion.listarLibros().get(i).getPrecio(),
+                servicioPublicacion.listarLibros().get(i).calcularPrecio(),
+                servicioPublicacion.listarLibros().get(i).getEditorial().getNombre(),
+                servicioPublicacion.listarLibros().get(i).isTapaDura()
+            });
+        }
+    }
+    
+    @Override
+    public void dispose()
+    {
+        servicioPublicacion.deleteInteresadaB(this);
+        super.dispose();
     }
 
     /**

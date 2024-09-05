@@ -370,7 +370,7 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_itemListarEActionPerformed
 
     private void itemActualizarLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemActualizarLActionPerformed
-        ActualizarLibro actualizar = new ActualizarLibro(servicioPublicacion);
+        ActualizarLibro actualizar = new ActualizarLibro(servicioPublicacion, servicioEditorial);
         actualizar.setVisible(true);
     }//GEN-LAST:event_itemActualizarLActionPerformed
 

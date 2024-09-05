@@ -12,6 +12,7 @@ com\feliperyjuanr\view\ActualizarRevista.class
 com\feliperyjuanr\view\AgregarRevista.class
 com\feliperyjuanr\model\Libro.class
 com\feliperyjuanr\view\ActualizarLibro.class
+com\feliperyjuanr\view\IclaseB.class
 com\feliperyjuanr\view\EliminarRevista$2.class
 com\feliperyjuanr\view\InfoEmpresa$2.class
 com\feliperyjuanr\view\CalcularPrecioRevistas$1.class
@@ -31,6 +32,7 @@ com\feliperyjuanr\services\ServicioPublicaciones.class
 com\feliperyjuanr\view\ListarEditoriales$1.class
 com\feliperyjuanr\view\BuscarLibro$2.class
 com\feliperyjuanr\view\BuscarRevista$3.class
+com\feliperyjuanr\view\ActualizarLibro$5.class
 com\feliperyjuanr\view\EliminarLibro$5.class
 com\feliperyjuanr\view\AgregarEditorial$1.class
 com\feliperyjuanr\view\AgregarRevista$1.class
@@ -72,6 +74,7 @@ com\feliperyjuanr\view\GUI$10.class
 com\feliperyjuanr\view\ActualizarRevista$2.class
 com\feliperyjuanr\view\InfoEmpresa$6.class
 com\feliperyjuanr\view\AgregarLibro$1.class
+com\feliperyjuanr\view\IclaseC.class
 com\feliperyjuanr\view\GUI$13.class
 com\feliperyjuanr\model\Empresa.class
 com\feliperyjuanr\model\Editorial.class
@@ -84,6 +87,7 @@ com\feliperyjuanr\view\InfoEmpresa$4.class
 com\feliperyjuanr\view\GUI$8.class
 com\feliperyjuanr\view\ActualizarEditorial.class
 com\feliperyjuanr\view\ActualizarLibro$2.class
+com\feliperyjuanr\view\IclaseD.class
 com\feliperyjuanr\view\CalcularPrecioRevistas.class
 com\feliperyjuanr\view\GUI$19.class
 com\feliperyjuanr\view\CalcularPrecioLibros$2.class

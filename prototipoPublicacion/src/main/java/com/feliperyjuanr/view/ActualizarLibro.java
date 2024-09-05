@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.feliperyjuanr.view;
+import com.feliperyjuanr.services.ServicioEditoriales;
 import com.feliperyjuanr.services.ServicioPublicaciones;
 import javax.swing.JOptionPane;
 
@@ -12,12 +13,14 @@ import javax.swing.JOptionPane;
  */
 public class ActualizarLibro extends javax.swing.JFrame {
     private ServicioPublicaciones servicioPublicacion;
+    private ServicioEditoriales servicioEditorial;
 
     /**
      * Creates new form BuscarLibro
      */
-    public ActualizarLibro(ServicioPublicaciones servicioPublicacion) {
+    public ActualizarLibro(ServicioPublicaciones servicioPublicacion, ServicioEditoriales servicioEditorial) {
         this.servicioPublicacion = servicioPublicacion;
+        this.servicioEditorial = servicioEditorial;
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -47,8 +50,8 @@ public class ActualizarLibro extends javax.swing.JFrame {
         txtAutor = new javax.swing.JTextField();
         lblLibro = new javax.swing.JLabel();
         lblPrecio1 = new javax.swing.JLabel();
-        txtEditorial = new javax.swing.JTextField();
         btnActualizar = new javax.swing.JButton();
+        cbxEditorial = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Actualizar Libro");
@@ -147,10 +150,13 @@ public class ActualizarLibro extends javax.swing.JFrame {
         lblPrecio1.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         lblPrecio1.setText("Precio");
 
-        txtEditorial.setEditable(true);
-
         btnActualizar.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnActualizar.setText("Actualizar");
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -168,7 +174,7 @@ public class ActualizarLibro extends javax.swing.JFrame {
                             .addComponent(txtTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                             .addComponent(txtAutor)
                             .addComponent(txtPrecio)
-                            .addComponent(txtEditorial)))
+                            .addComponent(cbxEditorial, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblLibro)
@@ -199,12 +205,12 @@ public class ActualizarLibro extends javax.swing.JFrame {
                     .addComponent(txtPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblPrecio1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEditorial)
-                    .addComponent(txtEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(cbxEditorial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(8, 8, 8)
                 .addComponent(chxTapaDura)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnActualizar)
@@ -243,7 +249,12 @@ public class ActualizarLibro extends javax.swing.JFrame {
             txtTitulo.setText(servicioPublicacion.buscarLibro(titulo).getTitulo());
             txtAutor.setText(servicioPublicacion.buscarLibro(titulo).getAutor());
             txtPrecio.setText(servicioPublicacion.buscarLibro(titulo).getPrecio()+"");
-            txtEditorial.setText(servicioPublicacion.buscarLibro(titulo).getEditorial().getNombre());
+            
+            for (int i = 0; i < servicioEditorial.listarEditoriales().size(); i++) {
+                cbxEditorial.addItem(servicioEditorial.listarEditoriales().get(i).getNombre());
+            }
+            
+            cbxEditorial.setSelectedItem(servicioPublicacion.buscarLibro(titulo).getEditorial().getNombre());
             chxTapaDura.setSelected(servicioPublicacion.buscarLibro(titulo).isTapaDura());
             lblLibro.setForeground(new java.awt.Color(76, 175, 80));
             jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(76, 175, 80), 2, true));
@@ -255,7 +266,6 @@ public class ActualizarLibro extends javax.swing.JFrame {
             txtTitulo.setText("");
             txtAutor.setText("");
             txtPrecio.setText("");
-            txtEditorial.setText("");
             chxTapaDura.setSelected(false);
             JOptionPane.showMessageDialog(this, "Error: No hay ningun Libro con ese Titulo!", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -274,10 +284,40 @@ public class ActualizarLibro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtAutorActionPerformed
 
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        // TODO add your handling code here:
+        int respuesta = servicioPublicacion.actualizarLibro(txtTituloBuscar.getText(), txtTitulo.getText(),
+                txtAutor.getText(), Double.parseDouble(txtPrecio.getText()), chxTapaDura.isSelected(), servicioEditorial.buscarEditorial((String)cbxEditorial.getSelectedItem()));
+        
+        switch(respuesta)
+            {
+                case 0:
+                {
+                    JOptionPane.showMessageDialog(this, "Libro agregado exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                    txtTitulo.setText("");
+                    txtAutor.setText("");
+                    txtPrecio.setText("");
+                    chxTapaDura.setSelected(false);
+                    break;
+                }
+                case 1:
+                {
+                    JOptionPane.showMessageDialog(this, "Error: Campos incorrectos o precio menor a 50!", "Error", JOptionPane.ERROR_MESSAGE);
+                    break;
+                }
+                case 2:
+                {
+                    JOptionPane.showMessageDialog(this, "Error: Ese Libro no existe!", "Error", JOptionPane.ERROR_MESSAGE);
+                    break;
+                }
+            }
+    }//GEN-LAST:event_btnActualizarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JComboBox<String> cbxEditorial;
     private javax.swing.JCheckBox chxTapaDura;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel7;
@@ -289,7 +329,6 @@ public class ActualizarLibro extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblTitulo6;
     private javax.swing.JTextField txtAutor;
-    private javax.swing.JTextField txtEditorial;
     private javax.swing.JTextField txtPrecio;
     private javax.swing.JTextField txtTitulo;
     private javax.swing.JTextField txtTituloBuscar;
