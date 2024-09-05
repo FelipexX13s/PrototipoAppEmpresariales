@@ -45,7 +45,7 @@ public class BuscarEditorial extends javax.swing.JFrame {
         lblEditorial = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Buscar Libro");
+        setTitle("Buscar Editorial");
 
         jPanel7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(33, 150, 243), 2, true));
 

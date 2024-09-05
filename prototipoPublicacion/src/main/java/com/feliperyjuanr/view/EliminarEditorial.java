@@ -45,7 +45,7 @@ public class EliminarEditorial extends javax.swing.JFrame {
         btnEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Eliminar Libro");
+        setTitle("Eliminar Editorial");
 
         jPanel7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(244, 67, 54), 2, true));
 

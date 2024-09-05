@@ -51,7 +51,7 @@ public class ActualizarLibro extends javax.swing.JFrame {
         btnActualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Buscar Libro");
+        setTitle("Actualizar Libro");
 
         jPanel7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(33, 150, 243), 2, true));
 

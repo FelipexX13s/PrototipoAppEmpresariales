@@ -52,7 +52,7 @@ public class ActualizarRevista extends javax.swing.JFrame {
         btnActualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("BuscarRevista");
+        setTitle("Actualizar Revista");
 
         jPanel7.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(33, 150, 243), 2, true));
 
