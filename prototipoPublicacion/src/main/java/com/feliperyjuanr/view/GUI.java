@@ -19,12 +19,6 @@ import javax.swing.ImageIcon;
  */
 public class GUI extends javax.swing.JFrame {
     
-    public static void main(String[] args) {
-        GUI gui = new GUI();
-        gui.setVisible(true);
-        
-    }
-    
     private ServicioEditoriales servicioEditorial;
     private ServicioPublicaciones servicioPublicacion;
     /**

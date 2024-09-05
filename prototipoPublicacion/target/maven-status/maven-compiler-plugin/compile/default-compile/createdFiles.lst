@@ -2,6 +2,7 @@ com\feliperyjuanr\model\Publicacion.class
 com\feliperyjuanr\view\GUI$11.class
 com\feliperyjuanr\model\Suscribible.class
 com\feliperyjuanr\view\EliminarLibro.class
+com\feliperyjuanr\prototipoPublicacion\Main.class
 com\feliperyjuanr\view\ListarLibros$2.class
 com\feliperyjuanr\view\GUI$3.class
 com\feliperyjuanr\view\ListarEditoriales$2.class
