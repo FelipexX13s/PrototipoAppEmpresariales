@@ -20,14 +20,14 @@ public class ServicioPublicaciones {
 
     //Atributos
     private ArrayList<Publicacion> publicaciones;
-    private ArrayList<IclaseB> interesadosLibros;
-    private ArrayList<IclaseC> interesadosRevistas;
+    private ServicioInterfazB servicioB;
+    private ServicioInterfazC servicioC;
     
     //Constructor
     public ServicioPublicaciones() {
         publicaciones = new ArrayList<>();
-        interesadosLibros = new ArrayList<>();
-        interesadosRevistas = new ArrayList<>();
+        ServicioInterfazB servicioB = new ServicioInterfazB();
+        ServicioInterfazC servicioC = new ServicioInterfazC();
     }
 
     //Métodos
@@ -47,7 +47,7 @@ public class ServicioPublicaciones {
         if (buscarLibro(libro.getTitulo()) == null) 
         {
             publicaciones.add(libro);
-            darAvisoB();
+            servicioB.darAvisoB();
             return 0;
         }
       
@@ -69,7 +69,7 @@ public class ServicioPublicaciones {
         if (buscarRevista(revista.getTitulo()) == null) 
         {
             publicaciones.add(revista);
-            darAvisoC();
+            servicioC.darAvisoC();
             return 0;
         }
       
@@ -102,7 +102,7 @@ public class ServicioPublicaciones {
         boolean eliminado = false;
         Publicacion pub = buscarLibro(titulo);
         eliminado = publicaciones.remove(pub);
-        darAvisoB();
+        servicioB.darAvisoB();
         return eliminado;
     }
     
@@ -110,7 +110,7 @@ public class ServicioPublicaciones {
         boolean eliminado = false;
         Publicacion pub = buscarRevista(titulo);
         eliminado = publicaciones.remove(pub);
-        darAvisoC();
+        servicioC.darAvisoC();
         return eliminado;
     }
 
@@ -172,7 +172,7 @@ public class ServicioPublicaciones {
             Libro libroAntiguo = buscarLibro(tituloAntiguo);
             int index = publicaciones.indexOf(libroAntiguo);
             publicaciones.set(index, nuevo);
-            darAvisoB();
+            servicioB.darAvisoB();
             return 0;
         }
       
@@ -196,38 +196,31 @@ public class ServicioPublicaciones {
             Revista revistaAntigua = buscarRevista(tituloAntiguo);
             int index = publicaciones.indexOf(revistaAntigua);
             publicaciones.set(index, nueva);
-            darAvisoC();
+            servicioC.darAvisoC();
             return 0;
         }
       
         return 2;
     }
     
-    public void addGUIInteresadaB(IclaseB interesada){
-        interesadosLibros.add(interesada);
+    public void addInteresadaB(IclaseB interesada)
+    {
+        servicioB.addGUIInteresadaB(interesada);
     }
     
-    public void deleteInteresadaB(IclaseB interesada){
-        interesadosLibros.remove(interesada);
+    public void addInteresadaC(IclaseC interesada)
+    {
+        servicioC.addGUIInteresadaC(interesada);
     }
     
-    private void darAvisoB(){
-        for (IclaseB gui : interesadosLibros){
-            gui.cambioLibro();
-        }
+    public void deleteInteresadaB(IclaseB interesada)
+    {
+        servicioB.deleteInteresadaB(interesada);
     }
     
-    public void addGUIInteresadaC(IclaseC interesada){
-        interesadosRevistas.add(interesada);
+    public void deleteInteresadaC(IclaseC interesada)
+    {
+        servicioC.deleteInteresadaC(interesada);
     }
     
-    public void deleteInteresadaC(IclaseC interesada){
-        interesadosRevistas.remove(interesada);
-    }
-    
-    private void darAvisoC(){
-        for (IclaseC gui : interesadosRevistas){
-            gui.cambioRevista();
-        }
-    }
 }

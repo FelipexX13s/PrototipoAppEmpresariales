@@ -21,7 +21,7 @@ public class ListarLibros extends javax.swing.JFrame implements IclaseB {
      */
     public ListarLibros(ServicioPublicaciones servicioPublicacion) {
         this.servicioPublicacion = servicioPublicacion;
-        servicioPublicacion.addGUIInteresadaB(this);
+        servicioPublicacion.addInteresadaB(this);
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
