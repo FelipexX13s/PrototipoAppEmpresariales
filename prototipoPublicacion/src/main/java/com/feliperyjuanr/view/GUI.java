@@ -56,18 +56,23 @@ public class GUI extends javax.swing.JFrame {
         menuLibro = new javax.swing.JMenu();
         itemAgregarL = new javax.swing.JMenuItem();
         itemBuscarL = new javax.swing.JMenuItem();
+        itemActualizarL = new javax.swing.JMenuItem();
         itemListarL = new javax.swing.JMenuItem();
         itemEliminar = new javax.swing.JMenuItem();
         itemCalcularL = new javax.swing.JMenuItem();
         menuRevista = new javax.swing.JMenu();
         itemAgregarR = new javax.swing.JMenuItem();
         itemBuscarR = new javax.swing.JMenuItem();
+        itemActualizarR = new javax.swing.JMenuItem();
         itemListarR = new javax.swing.JMenuItem();
         itemEliminarR = new javax.swing.JMenuItem();
         itemCalcularR = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         itemAgregarE = new javax.swing.JMenuItem();
+        itemBuscarE = new javax.swing.JMenuItem();
+        itemActualizarE = new javax.swing.JMenuItem();
         itemListarE = new javax.swing.JMenuItem();
+        itemEliminarE = new javax.swing.JMenuItem();
         menuHelp = new javax.swing.JMenu();
         btnAbout = new javax.swing.JMenuItem();
 
@@ -106,6 +111,14 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         menuLibro.add(itemBuscarL);
+
+        itemActualizarL.setText("Actualizar Libro");
+        itemActualizarL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemActualizarLActionPerformed(evt);
+            }
+        });
+        menuLibro.add(itemActualizarL);
 
         itemListarL.setText("Listar Libros");
         itemListarL.addActionListener(new java.awt.event.ActionListener() {
@@ -152,6 +165,14 @@ public class GUI extends javax.swing.JFrame {
         });
         menuRevista.add(itemBuscarR);
 
+        itemActualizarR.setText("Actualizar Revista");
+        itemActualizarR.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemActualizarRActionPerformed(evt);
+            }
+        });
+        menuRevista.add(itemActualizarR);
+
         itemListarR.setText("Listar Revistas");
         itemListarR.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -188,6 +209,22 @@ public class GUI extends javax.swing.JFrame {
         });
         jMenu1.add(itemAgregarE);
 
+        itemBuscarE.setText("Buscar Editorial");
+        itemBuscarE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemBuscarEActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itemBuscarE);
+
+        itemActualizarE.setText("Actualizar Editorial");
+        itemActualizarE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemActualizarEActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itemActualizarE);
+
         itemListarE.setText("Listar Editoriales");
         itemListarE.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -195,6 +232,14 @@ public class GUI extends javax.swing.JFrame {
             }
         });
         jMenu1.add(itemListarE);
+
+        itemEliminarE.setText("Eliminar Editorial");
+        itemEliminarE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemEliminarEActionPerformed(evt);
+            }
+        });
+        jMenu1.add(itemEliminarE);
 
         jMenuBar1.add(jMenu1);
 
@@ -321,6 +366,35 @@ public class GUI extends javax.swing.JFrame {
         listar.setVisible(true);
     }//GEN-LAST:event_itemListarEActionPerformed
 
+    private void itemActualizarLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemActualizarLActionPerformed
+        ActualizarLibro actualizar = new ActualizarLibro(servicioPublicacion);
+        actualizar.setVisible(true);
+    }//GEN-LAST:event_itemActualizarLActionPerformed
+
+    private void itemActualizarRActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemActualizarRActionPerformed
+        // TODO add your handling code here:
+        ActualizarRevista actualizar = new ActualizarRevista(servicioPublicacion);
+        actualizar.setVisible(true);
+    }//GEN-LAST:event_itemActualizarRActionPerformed
+
+    private void itemBuscarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBuscarEActionPerformed
+        // TODO add your handling code here:
+        BuscarEditorial buscar = new BuscarEditorial(servicioPublicacion);
+        buscar.setVisible(true);
+    }//GEN-LAST:event_itemBuscarEActionPerformed
+
+    private void itemActualizarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemActualizarEActionPerformed
+        // TODO add your handling code here:
+        ActualizarEditorial actualizar = new ActualizarEditorial(servicioPublicacion);
+        actualizar.setVisible(true);
+    }//GEN-LAST:event_itemActualizarEActionPerformed
+
+    private void itemEliminarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEliminarEActionPerformed
+        // TODO add your handling code here:
+        EliminarEditorial eliminar = new EliminarEditorial(servicioPublicacion);
+        eliminar.setVisible(true);
+    }//GEN-LAST:event_itemEliminarEActionPerformed
+
     
     
    
@@ -328,14 +402,19 @@ public class GUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem btnAbout;
     private javax.swing.JMenuItem btnCerrar;
+    private javax.swing.JMenuItem itemActualizarE;
+    private javax.swing.JMenuItem itemActualizarL;
+    private javax.swing.JMenuItem itemActualizarR;
     private javax.swing.JMenuItem itemAgregarE;
     private javax.swing.JMenuItem itemAgregarL;
     private javax.swing.JMenuItem itemAgregarR;
+    private javax.swing.JMenuItem itemBuscarE;
     private javax.swing.JMenuItem itemBuscarL;
     private javax.swing.JMenuItem itemBuscarR;
     private javax.swing.JMenuItem itemCalcularL;
     private javax.swing.JMenuItem itemCalcularR;
     private javax.swing.JMenuItem itemEliminar;
+    private javax.swing.JMenuItem itemEliminarE;
     private javax.swing.JMenuItem itemEliminarR;
     private javax.swing.JMenuItem itemListarE;
     private javax.swing.JMenuItem itemListarL;
