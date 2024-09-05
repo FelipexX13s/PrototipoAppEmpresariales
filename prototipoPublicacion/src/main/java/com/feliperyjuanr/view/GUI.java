@@ -69,6 +69,7 @@ public class GUI extends javax.swing.JFrame {
         itemEliminarE = new javax.swing.JMenuItem();
         menuHelp = new javax.swing.JMenu();
         btnAbout = new javax.swing.JMenuItem();
+        menuInfo = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gestor Publicaciones");
@@ -247,6 +248,14 @@ public class GUI extends javax.swing.JFrame {
         });
         menuHelp.add(btnAbout);
 
+        menuInfo.setText("Info Empresa");
+        menuInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuInfoActionPerformed(evt);
+            }
+        });
+        menuHelp.add(menuInfo);
+
         jMenuBar1.add(menuHelp);
 
         setJMenuBar(jMenuBar1);
@@ -389,6 +398,12 @@ public class GUI extends javax.swing.JFrame {
         eliminar.setVisible(true);
     }//GEN-LAST:event_itemEliminarEActionPerformed
 
+    private void menuInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuInfoActionPerformed
+        // TODO add your handling code here:
+        InfoEmpresa info = new InfoEmpresa();
+        info.setVisible(true);
+    }//GEN-LAST:event_menuInfoActionPerformed
+
     
     
    
@@ -418,6 +433,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel lblImagenLogo;
     private javax.swing.JMenu menuFile;
     private javax.swing.JMenu menuHelp;
+    private javax.swing.JMenuItem menuInfo;
     private javax.swing.JMenu menuLibro;
     private javax.swing.JMenu menuRevista;
     // End of variables declaration//GEN-END:variables
