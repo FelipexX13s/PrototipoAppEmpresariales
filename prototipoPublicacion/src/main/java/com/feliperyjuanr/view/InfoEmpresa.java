@@ -4,17 +4,31 @@
  */
 package com.feliperyjuanr.view;
 
+import com.feliperyjuanr.model.Empresa;
+import java.time.format.DateTimeFormatter;
+
 /**
  *
  * @author juanp
  */
 public class InfoEmpresa extends javax.swing.JFrame {
 
+    private Empresa empresa = Empresa.getEmpresa();
+    
     /**
      * Creates new form InfoEmpresa
      */
     public InfoEmpresa() {
+        setLocationRelativeTo(null);
         initComponents();
+        txtNombre.setText(empresa.getNombre());
+        txtNit.setText(empresa.getNit());
+        txtDireccion.setText(empresa.getDireccion());
+        txtTelefono.setText(empresa.getTelefono());
+        
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        
+        txtFecha.setText(empresa.getFechaFundacion().format(formatter));
     }
 
     /**
@@ -52,6 +66,7 @@ public class InfoEmpresa extends javax.swing.JFrame {
         lblTitulo.setText("Nombre");
 
         txtNit.setEditable(false);
+        txtNit.setEnabled(false);
         txtNit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNitActionPerformed(evt);
@@ -71,6 +86,7 @@ public class InfoEmpresa extends javax.swing.JFrame {
         lblFecha.setText("Fecha Fundacion");
 
         txtNit.setEditable(false);
+        txtNombre.setEnabled(false);
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
@@ -78,6 +94,7 @@ public class InfoEmpresa extends javax.swing.JFrame {
         });
 
         txtNit.setEditable(false);
+        txtDireccion.setEnabled(false);
         txtDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDireccionActionPerformed(evt);
@@ -85,6 +102,7 @@ public class InfoEmpresa extends javax.swing.JFrame {
         });
 
         txtNit.setEditable(false);
+        txtFecha.setEnabled(false);
         txtFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFechaActionPerformed(evt);
@@ -92,6 +110,7 @@ public class InfoEmpresa extends javax.swing.JFrame {
         });
 
         txtNit.setEditable(false);
+        txtTelefono.setEnabled(false);
         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelefonoActionPerformed(evt);

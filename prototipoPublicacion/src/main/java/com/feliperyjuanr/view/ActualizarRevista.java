@@ -13,12 +13,14 @@ import javax.swing.JOptionPane;
  */
 public class ActualizarRevista extends javax.swing.JFrame {
     private ServicioPublicaciones servicioPublicacion;
+    private String antiguoTitulo;
 
     /**
      * Creates new form BuscarRevista
      */
     public ActualizarRevista(ServicioPublicaciones servicioPublicacion) {
         this.servicioPublicacion = servicioPublicacion;
+        antiguoTitulo= "";
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -147,6 +149,12 @@ public class ActualizarRevista extends javax.swing.JFrame {
 
         btnActualizar.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnActualizar.setText("Actualizar");
+        btnActualizar.setEnabled(false);
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -243,6 +251,8 @@ public class ActualizarRevista extends javax.swing.JFrame {
             txtVolumen.setText(servicioPublicacion.buscarRevista(titulo).getVolumen()+"");
             chxSuscrito.setSelected(servicioPublicacion.buscarRevista(titulo).estaSuscrito());
             lblRevista.setForeground(new java.awt.Color(76, 175, 80));
+            btnActualizar.setEnabled(true);
+            antiguoTitulo = txtTituloBuscar.getText();
             jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(76, 175, 80), 2, true));
         }
         else
@@ -253,7 +263,9 @@ public class ActualizarRevista extends javax.swing.JFrame {
             txtAutor.setText("");
             txtPrecio.setText("");
             txtVolumen.setText("");
+            btnActualizar.setEnabled(false);
             chxSuscrito.setSelected(false);
+            antiguoTitulo = "";
             JOptionPane.showMessageDialog(this, "Error: No hay ninguna Revista con ese Titulo!", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
@@ -265,6 +277,31 @@ public class ActualizarRevista extends javax.swing.JFrame {
     private void txtTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTituloActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTituloActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        // TODO add your handling code here:
+        int respuesta = servicioPublicacion.actualizarRevista(antiguoTitulo, txtTitulo.getText(), txtAutor.getText(), 
+        Double.parseDouble(txtPrecio.getText()), Integer.parseInt(txtVolumen.getText()), chxSuscrito.isSelected());
+        
+        switch(respuesta)
+            {
+                case 0:
+                {
+                    JOptionPane.showMessageDialog(this, "Revista actualizada exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                    txtTitulo.setText("");
+                    txtAutor.setText("");
+                    txtPrecio.setText("");
+                    txtVolumen.setText("");
+                    chxSuscrito.setSelected(false);
+                    break;
+                }
+                case 1:
+                {
+                    JOptionPane.showMessageDialog(this, "Error: Campos incorrectos, precio menor a 50 o volumen menor a 1!", "Error", JOptionPane.ERROR_MESSAGE);
+                    break;
+                }
+            }
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

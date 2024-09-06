@@ -78,14 +78,11 @@ public class ServicioEditoriales {
             return 1;
         }
         
-        if (buscarEditorial(nombreAntiguo) != null) {
-            Editorial editorialAntigua = buscarEditorial(nombreAntiguo);
-            int index = editoriales.indexOf(editorialAntigua);
-            editoriales.set(index, nueva);
-            servicioD.darAvisoD();
-            return 0;
-        }
-        return 2;
+        Editorial editorialAntigua = buscarEditorial(nombreAntiguo);
+        int index = editoriales.indexOf(editorialAntigua);
+        editoriales.set(index, nueva);
+        servicioD.darAvisoD();
+        return 0;
     }
     
     public void addInteresadaD(IclaseD interesada)

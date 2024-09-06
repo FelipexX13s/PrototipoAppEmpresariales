@@ -4,7 +4,7 @@
  */
 package com.feliperyjuanr.view;
 
-import com.feliperyjuanr.services.ServicioPublicaciones;
+import com.feliperyjuanr.services.ServicioEditoriales;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,13 +12,15 @@ import javax.swing.JOptionPane;
  * @author juanp
  */
 public class ActualizarEditorial extends javax.swing.JFrame {
-    private ServicioPublicaciones servicioPublicacion;
+    private ServicioEditoriales servicioEditorial;
+    private String antiguoNombre;
 
     /**
      * Creates new form BuscarRevista
      */
-    public ActualizarEditorial(ServicioPublicaciones servicioPublicacion) {
-        this.servicioPublicacion = servicioPublicacion;
+    public ActualizarEditorial(ServicioEditoriales servicioEditorial) {
+        this.servicioEditorial = servicioEditorial;
+        antiguoNombre = "";
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -123,6 +125,12 @@ public class ActualizarEditorial extends javax.swing.JFrame {
 
         btnActualizar.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnActualizar.setText("Actualizar");
+        btnActualizar.setEnabled(false);
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnActualizarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -193,12 +201,13 @@ public class ActualizarEditorial extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-        String titulo = txtNombreBuscar.getText();
-        if(servicioPublicacion.buscarRevista(titulo)!=null)
+        String nombre = txtNombreBuscar.getText();
+        if(servicioEditorial.buscarEditorial(nombre)!=null)
         {
-            txtNombre.setText(servicioPublicacion.buscarRevista(titulo).getTitulo());
-            txtDireccion.setText(servicioPublicacion.buscarRevista(titulo).getAutor());
+            txtNombre.setText(servicioEditorial.buscarEditorial(nombre).getNombre());
+            txtDireccion.setText(servicioEditorial.buscarEditorial(nombre).getDireccion());
             lblEditorial.setForeground(new java.awt.Color(76, 175, 80));
+            antiguoNombre = txtNombreBuscar.getText();
             jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(76, 175, 80), 2, true));
         }
         else
@@ -207,6 +216,7 @@ public class ActualizarEditorial extends javax.swing.JFrame {
             jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(244, 67, 54), 2, true));
             txtNombre.setText("");
             txtDireccion.setText("");
+            antiguoNombre = "";
             JOptionPane.showMessageDialog(this, "Error: No hay ninguna Revista con ese Titulo!", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
@@ -214,6 +224,27 @@ public class ActualizarEditorial extends javax.swing.JFrame {
     private void txtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
+
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        // TODO add your handling code here:
+        int respuesta = servicioEditorial.actualizarEditorial(antiguoNombre, txtNombre.getText(), txtDireccion.getText());
+        
+        switch(respuesta)
+        {
+            case 0:
+            {
+                JOptionPane.showMessageDialog(this, "Editorial actuaizada exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                txtNombre.setText("");
+                txtDireccion.setText("");
+                break;
+            }
+            case 1:
+            {
+                JOptionPane.showMessageDialog(this, "Error: Campos incorrectos!", "Error", JOptionPane.ERROR_MESSAGE);
+                break;
+            }
+        }
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

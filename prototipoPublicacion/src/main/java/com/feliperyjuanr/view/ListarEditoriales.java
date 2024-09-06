@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author juanp
  */
-public class ListarEditoriales extends javax.swing.JFrame {
+public class ListarEditoriales extends javax.swing.JFrame implements IclaseD {
 
     private ServicioEditoriales servicioEditorial;
 
@@ -21,9 +21,31 @@ public class ListarEditoriales extends javax.swing.JFrame {
      */
     public ListarEditoriales(ServicioEditoriales servicioEditorial) {
         this.servicioEditorial = servicioEditorial;
+        servicioEditorial.addInteresadaD(this);
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+    }
+    
+    public void cambioEditoriales()
+    {
+        DefaultTableModel model = (DefaultTableModel) tblEditoriales.getModel();
+        model.setRowCount(0);
+        
+        for (int i = 0; i < servicioEditorial.listarEditoriales().size(); i++) 
+        {
+            model.addRow(new Object[]{
+                servicioEditorial.listarEditoriales().get(i).getNombre(),
+                servicioEditorial.listarEditoriales().get(i).getDireccion()
+            });
+        }
+    }
+    
+    @Override
+    public void dispose()
+    {
+        servicioEditorial.deleteInteresadaD(this);
+        super.dispose();
     }
 
     /**
@@ -144,7 +166,6 @@ public class ListarEditoriales extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_btnListarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnListar;

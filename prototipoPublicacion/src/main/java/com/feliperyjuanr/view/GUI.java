@@ -293,7 +293,7 @@ public class GUI extends javax.swing.JFrame {
                 + "Juan Esteban Rodriguez Castellanos\n"
                 + "Cod.2220221063\n\n"
                 + "Desarrollo de Aplicaciones Empresariales\n"
-                + "Version 1.0";
+                + "Version 2.0";
 
         JOptionPane.showMessageDialog(this, desarrollo, "Información", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_btnAboutActionPerformed
@@ -382,19 +382,19 @@ public class GUI extends javax.swing.JFrame {
 
     private void itemBuscarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemBuscarEActionPerformed
         // TODO add your handling code here:
-        BuscarEditorial buscar = new BuscarEditorial(servicioPublicacion);
+        BuscarEditorial buscar = new BuscarEditorial(servicioEditorial);
         buscar.setVisible(true);
     }//GEN-LAST:event_itemBuscarEActionPerformed
 
     private void itemActualizarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemActualizarEActionPerformed
         // TODO add your handling code here:
-        ActualizarEditorial actualizar = new ActualizarEditorial(servicioPublicacion);
+        ActualizarEditorial actualizar = new ActualizarEditorial(servicioEditorial);
         actualizar.setVisible(true);
     }//GEN-LAST:event_itemActualizarEActionPerformed
 
     private void itemEliminarEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemEliminarEActionPerformed
         // TODO add your handling code here:
-        EliminarEditorial eliminar = new EliminarEditorial(servicioPublicacion);
+        EliminarEditorial eliminar = new EliminarEditorial(servicioEditorial);
         eliminar.setVisible(true);
     }//GEN-LAST:event_itemEliminarEActionPerformed
 

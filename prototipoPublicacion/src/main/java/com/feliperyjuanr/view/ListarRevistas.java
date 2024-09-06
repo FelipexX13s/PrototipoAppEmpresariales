@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author juanp
  */
-public class ListarRevistas extends javax.swing.JFrame {
+public class ListarRevistas extends javax.swing.JFrame implements IclaseC {
     private ServicioPublicaciones servicioPublicacion;
 
     /**
@@ -20,9 +20,35 @@ public class ListarRevistas extends javax.swing.JFrame {
      */
     public ListarRevistas(ServicioPublicaciones servicioPublicacion) {
         this.servicioPublicacion = servicioPublicacion;
+        servicioPublicacion.addInteresadaC(this);
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
+    }
+    
+    public void cambioRevista()
+    {
+        DefaultTableModel model = (DefaultTableModel) tblRevistas.getModel();
+        model.setRowCount(0);
+        
+        for (int i = 0; i < servicioPublicacion.listarRevistas().size(); i++) 
+        {
+            model.addRow(new Object[]{
+                servicioPublicacion.listarRevistas().get(i).getTitulo(),
+                servicioPublicacion.listarRevistas().get(i).getAutor(),
+                servicioPublicacion.listarRevistas().get(i).getPrecio(),
+                servicioPublicacion.listarRevistas().get(i).calcularPrecio(),
+                servicioPublicacion.listarRevistas().get(i).getVolumen(),
+                servicioPublicacion.listarRevistas().get(i).estaSuscrito()
+            });
+        }
+    }
+    
+    @Override
+    public void dispose()
+    {
+        servicioPublicacion.deleteInteresadaC(this);
+        super.dispose();
     }
 
     /**

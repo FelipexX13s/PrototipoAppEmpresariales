@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 public class ActualizarLibro extends javax.swing.JFrame {
     private ServicioPublicaciones servicioPublicacion;
     private ServicioEditoriales servicioEditorial;
+    private String antiguoTitulo;
 
     /**
      * Creates new form BuscarLibro
@@ -21,6 +22,7 @@ public class ActualizarLibro extends javax.swing.JFrame {
     public ActualizarLibro(ServicioPublicaciones servicioPublicacion, ServicioEditoriales servicioEditorial) {
         this.servicioPublicacion = servicioPublicacion;
         this.servicioEditorial = servicioEditorial;
+        antiguoTitulo = "";
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -152,6 +154,7 @@ public class ActualizarLibro extends javax.swing.JFrame {
 
         btnActualizar.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         btnActualizar.setText("Actualizar");
+        btnActualizar.setEnabled(false);
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarActionPerformed(evt);
@@ -243,12 +246,16 @@ public class ActualizarLibro extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
+        
+        cbxEditorial.removeAllItems();
+        
         String titulo = txtTituloBuscar.getText();
         if(servicioPublicacion.buscarLibro(titulo)!=null)
         {
             txtTitulo.setText(servicioPublicacion.buscarLibro(titulo).getTitulo());
             txtAutor.setText(servicioPublicacion.buscarLibro(titulo).getAutor());
             txtPrecio.setText(servicioPublicacion.buscarLibro(titulo).getPrecio()+"");
+            antiguoTitulo = txtTituloBuscar.getText();
             
             for (int i = 0; i < servicioEditorial.listarEditoriales().size(); i++) {
                 cbxEditorial.addItem(servicioEditorial.listarEditoriales().get(i).getNombre());
@@ -256,6 +263,7 @@ public class ActualizarLibro extends javax.swing.JFrame {
             
             cbxEditorial.setSelectedItem(servicioPublicacion.buscarLibro(titulo).getEditorial().getNombre());
             chxTapaDura.setSelected(servicioPublicacion.buscarLibro(titulo).isTapaDura());
+            btnActualizar.setEnabled(true);
             lblLibro.setForeground(new java.awt.Color(76, 175, 80));
             jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(76, 175, 80), 2, true));
         }
@@ -267,6 +275,8 @@ public class ActualizarLibro extends javax.swing.JFrame {
             txtAutor.setText("");
             txtPrecio.setText("");
             chxTapaDura.setSelected(false);
+            btnActualizar.setEnabled(false);
+            antiguoTitulo = "";
             JOptionPane.showMessageDialog(this, "Error: No hay ningun Libro con ese Titulo!", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
@@ -286,14 +296,14 @@ public class ActualizarLibro extends javax.swing.JFrame {
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         // TODO add your handling code here:
-        int respuesta = servicioPublicacion.actualizarLibro(txtTituloBuscar.getText(), txtTitulo.getText(),
-                txtAutor.getText(), Double.parseDouble(txtPrecio.getText()), chxTapaDura.isSelected(), servicioEditorial.buscarEditorial((String)cbxEditorial.getSelectedItem()));
+        int respuesta = servicioPublicacion.actualizarLibro(antiguoTitulo, txtTitulo.getText(),
+        txtAutor.getText(), Double.parseDouble(txtPrecio.getText()), chxTapaDura.isSelected(), servicioEditorial.buscarEditorial((String)cbxEditorial.getSelectedItem()));
         
         switch(respuesta)
             {
                 case 0:
                 {
-                    JOptionPane.showMessageDialog(this, "Libro agregado exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(this, "Libro actualizado exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
                     txtTitulo.setText("");
                     txtAutor.setText("");
                     txtPrecio.setText("");
@@ -303,11 +313,6 @@ public class ActualizarLibro extends javax.swing.JFrame {
                 case 1:
                 {
                     JOptionPane.showMessageDialog(this, "Error: Campos incorrectos o precio menor a 50!", "Error", JOptionPane.ERROR_MESSAGE);
-                    break;
-                }
-                case 2:
-                {
-                    JOptionPane.showMessageDialog(this, "Error: Ese Libro no existe!", "Error", JOptionPane.ERROR_MESSAGE);
                     break;
                 }
             }

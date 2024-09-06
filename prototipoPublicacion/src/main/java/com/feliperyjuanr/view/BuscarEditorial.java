@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.feliperyjuanr.view;
-import com.feliperyjuanr.services.ServicioPublicaciones;
+import com.feliperyjuanr.services.ServicioEditoriales;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,13 +11,13 @@ import javax.swing.JOptionPane;
  * @author juanp
  */
 public class BuscarEditorial extends javax.swing.JFrame {
-    private ServicioPublicaciones servicioPublicacion;
+    private ServicioEditoriales servicioEditorial;
 
     /**
      * Creates new form BuscarLibro
      */
-    public BuscarEditorial(ServicioPublicaciones servicioPublicacion) {
-        this.servicioPublicacion = servicioPublicacion;
+    public BuscarEditorial(ServicioEditoriales servicioEditorial) {
+        this.servicioEditorial = servicioEditorial;
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -187,11 +187,11 @@ public class BuscarEditorial extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-        String titulo = txtNombreBuscar.getText();
-        if(servicioPublicacion.buscarLibro(titulo)!=null)
+        String nombre = txtNombreBuscar.getText();
+        if(servicioEditorial.buscarEditorial(nombre).getNombre() != null)
         {
-            txtNombre.setText(servicioPublicacion.buscarLibro(titulo).getTitulo());
-            txtDireccion.setText(servicioPublicacion.buscarLibro(titulo).getAutor());
+            txtNombre.setText(servicioEditorial.buscarEditorial(nombre).getNombre());
+            txtDireccion.setText(servicioEditorial.buscarEditorial(nombre).getDireccion());
             lblEditorial.setForeground(new java.awt.Color(76, 175, 80));
             jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(76, 175, 80), 2, true));
         }
@@ -201,7 +201,7 @@ public class BuscarEditorial extends javax.swing.JFrame {
             jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(244, 67, 54), 2, true));
             txtNombre.setText("");
             txtDireccion.setText("");
-            JOptionPane.showMessageDialog(this, "Error: No hay ningun Libro con ese Titulo!", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error: No hay ninguna Editorial con ese Nombre!", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
     }//GEN-LAST:event_btnBuscarActionPerformed

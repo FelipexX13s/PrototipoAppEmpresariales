@@ -148,6 +148,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNit">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNitActionPerformed"/>
           </Events>
@@ -188,6 +191,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtNombre">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtNombreActionPerformed"/>
           </Events>
@@ -196,6 +202,9 @@
           </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="txtDireccion">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDireccionActionPerformed"/>
           </Events>
@@ -204,6 +213,9 @@
           </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFecha">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFechaActionPerformed"/>
           </Events>
@@ -212,6 +224,9 @@
           </AuxValues>
         </Component>
         <Component class="javax.swing.JTextField" name="txtTelefono">
+          <Properties>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTelefonoActionPerformed"/>
           </Events>

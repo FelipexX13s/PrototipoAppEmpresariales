@@ -26,8 +26,8 @@ public class ServicioPublicaciones {
     //Constructor
     public ServicioPublicaciones() {
         publicaciones = new ArrayList<>();
-        ServicioInterfazB servicioB = new ServicioInterfazB();
-        ServicioInterfazC servicioC = new ServicioInterfazC();
+        servicioB = new ServicioInterfazB();
+        servicioC = new ServicioInterfazC();
     }
 
     //Métodos

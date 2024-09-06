@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.feliperyjuanr.view;
-import com.feliperyjuanr.services.ServicioPublicaciones;
+import com.feliperyjuanr.services.ServicioEditoriales;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,12 +11,12 @@ import javax.swing.JOptionPane;
  * @author juanp
  */
 public class EliminarEditorial extends javax.swing.JFrame {
-    private ServicioPublicaciones servicioPublicacion;
+    private ServicioEditoriales servicioEditorial;
     /**
      * @param servicioPublicacion
      */
-    public EliminarEditorial(ServicioPublicaciones servicioPublicacion ) {
-        this.servicioPublicacion = servicioPublicacion;
+    public EliminarEditorial(ServicioEditoriales servicioEditorial ) {
+        this.servicioEditorial = servicioEditorial;
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -198,11 +198,11 @@ public class EliminarEditorial extends javax.swing.JFrame {
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
-        String titulo = txtNombreBuscar.getText();
-        if(servicioPublicacion.buscarLibro(titulo)!=null)
+        String nombre = txtNombreBuscar.getText();
+        if(servicioEditorial.buscarEditorial(nombre)!=null)
         {
-            txtNombre.setText(servicioPublicacion.buscarLibro(titulo).getTitulo());
-            txtDireccion.setText(servicioPublicacion.buscarLibro(titulo).getAutor());
+            txtNombre.setText(servicioEditorial.buscarEditorial(nombre).getNombre());
+            txtDireccion.setText(servicioEditorial.buscarEditorial(nombre).getDireccion());
             lblEditorial.setForeground(new java.awt.Color(255, 152, 0));
             jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 152, 0), 2, true));
             btnEliminar.setEnabled(true);
@@ -214,7 +214,7 @@ public class EliminarEditorial extends javax.swing.JFrame {
             lblEditorial.setForeground(new java.awt.Color(244, 67, 54));
             jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(244, 67, 54), 2, true));
             btnEliminar.setEnabled(false);
-            JOptionPane.showMessageDialog(this, "Error: No hay ningun Libro con ese Titulo!", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Error: No hay ninguna Editorial con ese Titulo!", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
@@ -234,8 +234,8 @@ public class EliminarEditorial extends javax.swing.JFrame {
         // Verificar la respuesta del usuario
         if (confirmacion == JOptionPane.YES_OPTION) {
             // Código para eliminar el elemento
-            servicioPublicacion.eliminarLibro(txtNombreBuscar.getText());
-            JOptionPane.showMessageDialog(this, "Libro eliminado!", "Confirmacion", JOptionPane.INFORMATION_MESSAGE);
+            servicioEditorial.eliminarEditorial(txtNombreBuscar.getText());
+            JOptionPane.showMessageDialog(this, "Editorial eliminada!", "Confirmacion", JOptionPane.INFORMATION_MESSAGE);
             txtNombre.setText("");
             txtDireccion.setText("");
             lblEditorial.setForeground(new java.awt.Color(244, 67, 54));
@@ -243,7 +243,7 @@ public class EliminarEditorial extends javax.swing.JFrame {
             btnEliminar.setEnabled(false);
 
         } else {
-            JOptionPane.showMessageDialog(this, "No se elimino el libro!", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No se elimino la editorial!", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 

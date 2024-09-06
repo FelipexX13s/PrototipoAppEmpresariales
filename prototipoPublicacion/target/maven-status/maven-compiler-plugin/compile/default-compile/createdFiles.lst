@@ -19,6 +19,7 @@ com\feliperyjuanr\view\CalcularPrecioRevistas$1.class
 com\feliperyjuanr\view\ActualizarLibro$4.class
 com\feliperyjuanr\view\GUI$7.class
 com\feliperyjuanr\view\GUI$17.class
+com\feliperyjuanr\services\ServicioInterfazB.class
 com\feliperyjuanr\view\EliminarRevista.class
 com\feliperyjuanr\view\AgregarRevista$2.class
 com\feliperyjuanr\view\BuscarRevista$2.class
@@ -46,6 +47,7 @@ com\feliperyjuanr\view\CalcularPrecioLibros.class
 com\feliperyjuanr\view\GUI$20.class
 com\feliperyjuanr\view\EliminarRevista$3.class
 com\feliperyjuanr\view\AgregarEditorial$2.class
+com\feliperyjuanr\view\ActualizarRevista$4.class
 com\feliperyjuanr\view\EliminarLibro$4.class
 com\feliperyjuanr\view\GUI$5.class
 com\feliperyjuanr\view\ListarRevistas$1.class
@@ -54,6 +56,7 @@ com\feliperyjuanr\view\InfoEmpresa$1.class
 com\feliperyjuanr\view\ActualizarEditorial$1.class
 com\feliperyjuanr\view\GUI$15.class
 com\feliperyjuanr\view\ListarEditoriales.class
+com\feliperyjuanr\services\ServicioInterfazC.class
 com\feliperyjuanr\model\Suscribible.class
 com\feliperyjuanr\view\ListarLibros$2.class
 com\feliperyjuanr\view\GUI$3.class
@@ -72,7 +75,6 @@ com\feliperyjuanr\view\EliminarRevista$1.class
 com\feliperyjuanr\view\BuscarEditorial.class
 com\feliperyjuanr\view\GUI$10.class
 com\feliperyjuanr\view\ActualizarRevista$2.class
-com\feliperyjuanr\view\InfoEmpresa$6.class
 com\feliperyjuanr\view\AgregarLibro$1.class
 com\feliperyjuanr\view\IclaseC.class
 com\feliperyjuanr\view\GUI$13.class
@@ -82,6 +84,7 @@ com\feliperyjuanr\view\EliminarEditorial$1.class
 com\feliperyjuanr\view\AgregarLibro$4.class
 com\feliperyjuanr\view\BuscarLibro$4.class
 com\feliperyjuanr\model\Revista.class
+com\feliperyjuanr\view\ActualizarEditorial$3.class
 com\feliperyjuanr\view\EliminarLibro$2.class
 com\feliperyjuanr\view\InfoEmpresa$4.class
 com\feliperyjuanr\view\GUI$8.class
@@ -94,6 +97,7 @@ com\feliperyjuanr\view\CalcularPrecioLibros$2.class
 com\feliperyjuanr\view\BuscarEditorial$3.class
 com\feliperyjuanr\view\GUI$1.class
 com\feliperyjuanr\view\AgregarLibro$3.class
+com\feliperyjuanr\services\ServicioInterfazD.class
 com\feliperyjuanr\view\BuscarEditorial$2.class
 com\feliperyjuanr\view\BuscarLibro$3.class
 com\feliperyjuanr\view\GUI$2.class
