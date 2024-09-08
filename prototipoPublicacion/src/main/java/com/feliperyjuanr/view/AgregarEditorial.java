@@ -39,7 +39,7 @@ public class AgregarEditorial extends javax.swing.JFrame {
         lblDireccion = new javax.swing.JLabel();
         txtDireccion = new javax.swing.JTextField();
         lblAgregarLibro = new javax.swing.JLabel();
-        btnAgregarLibro = new javax.swing.JButton();
+        btnAgregarEditorial = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Agregar Editorial");
@@ -62,11 +62,11 @@ public class AgregarEditorial extends javax.swing.JFrame {
         lblAgregarLibro.setForeground(new java.awt.Color(76, 175, 80));
         lblAgregarLibro.setText("Agregar Editorial");
 
-        btnAgregarLibro.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
-        btnAgregarLibro.setText("Agregar Editorial");
-        btnAgregarLibro.addActionListener(new java.awt.event.ActionListener() {
+        btnAgregarEditorial.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        btnAgregarEditorial.setText("Agregar Editorial");
+        btnAgregarEditorial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAgregarLibroActionPerformed(evt);
+                btnAgregarEditorialActionPerformed(evt);
             }
         });
 
@@ -76,7 +76,7 @@ public class AgregarEditorial extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAgregarLibro)
+                .addComponent(btnAgregarEditorial)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -110,7 +110,7 @@ public class AgregarEditorial extends javax.swing.JFrame {
                     .addComponent(lblDireccion)
                     .addComponent(txtDireccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnAgregarLibro)
+                .addComponent(btnAgregarEditorial)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -138,7 +138,7 @@ public class AgregarEditorial extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNombreActionPerformed
 
-    private void btnAgregarLibroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarLibroActionPerformed
+    private void btnAgregarEditorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarEditorialActionPerformed
         // TODO add your handling code here:
         String nombre = txtNombre.getText();
         String direccion = txtDireccion.getText();
@@ -165,12 +165,12 @@ public class AgregarEditorial extends javax.swing.JFrame {
                 break;
             }
         }
-    }//GEN-LAST:event_btnAgregarLibroActionPerformed
+    }//GEN-LAST:event_btnAgregarEditorialActionPerformed
 
  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAgregarLibro;
+    private javax.swing.JButton btnAgregarEditorial;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblAgregarLibro;
     private javax.swing.JLabel lblDireccion;

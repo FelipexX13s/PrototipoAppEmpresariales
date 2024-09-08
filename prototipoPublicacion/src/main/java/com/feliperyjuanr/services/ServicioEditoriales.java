@@ -80,20 +80,18 @@ public class ServicioEditoriales {
     }
     
     public int actualizarEditorial(String nombreAntiguo, String nombre, String direccion) {
-        Editorial nueva = null;
+        Editorial editorial = buscarEditorial(nombreAntiguo);
         
         try
         {
-            nueva = new Editorial(nombre, direccion);
+            editorial.setNombre(nombre);
+            editorial.setDireccion(direccion);
         }
         catch(Exception e)
         {
             return 1;
         }
         
-        Editorial editorialAntigua = buscarEditorial(nombreAntiguo);
-        int index = editoriales.indexOf(editorialAntigua);
-        editoriales.set(index, nueva);
         servicioD.darAvisoD();
         servicioB.darAvisoB();
         return 0;

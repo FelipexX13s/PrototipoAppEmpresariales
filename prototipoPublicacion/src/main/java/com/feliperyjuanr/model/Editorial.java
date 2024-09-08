@@ -32,8 +32,13 @@ public class Editorial
         return nombre;
     }
 
-    public void setNombre(String nombre) 
+    public void setNombre(String nombre) throws Exception 
     {
+        if(nombre == null || nombre.isBlank())
+        {
+            throw new Exception();
+        }
+        
         this.nombre = nombre;
     }
 
@@ -42,8 +47,12 @@ public class Editorial
         return direccion;
     }
 
-    public void setDireccion(String direccion) 
+    public void setDireccion(String direccion) throws Exception 
     {
+        if(direccion == null || direccion.isBlank())
+        {
+            throw new Exception();
+        }
         this.direccion = direccion;
     }
 }
