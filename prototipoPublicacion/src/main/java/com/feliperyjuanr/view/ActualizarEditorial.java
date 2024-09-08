@@ -209,6 +209,7 @@ public class ActualizarEditorial extends javax.swing.JFrame {
             lblEditorial.setForeground(new java.awt.Color(76, 175, 80));
             antiguoNombre = txtNombreBuscar.getText();
             jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(76, 175, 80), 2, true));
+            btnActualizar.setEnabled(true);
         }
         else
         {

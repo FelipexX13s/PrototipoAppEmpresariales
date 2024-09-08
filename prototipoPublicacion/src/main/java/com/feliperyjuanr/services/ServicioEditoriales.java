@@ -5,8 +5,6 @@
 package com.feliperyjuanr.services;
 
 import com.feliperyjuanr.model.Editorial;
-import com.feliperyjuanr.view.IclaseB;
-import com.feliperyjuanr.view.IclaseC;
 import com.feliperyjuanr.view.IclaseD;
 import java.util.ArrayList;
 
@@ -19,12 +17,25 @@ public class ServicioEditoriales {
     //Atributos
     private ArrayList<Editorial> editoriales;
     private ServicioInterfazD servicioD;
+    private static ServicioEditoriales sEditoriales;
+    private ServicioInterfazB servicioB;
     
-    public ServicioEditoriales() {
+    
+    private ServicioEditoriales() {
         editoriales = new ArrayList<>();
-        servicioD = new ServicioInterfazD();
+        servicioD = ServicioInterfazD.getServicioInterfazD();
+        servicioB = ServicioInterfazB.getServicioInterfazB();
     }
-
+    
+    public synchronized static ServicioEditoriales getServicioEditoriales(){
+    
+        if (sEditoriales == null){
+            sEditoriales = new ServicioEditoriales();
+        }
+     
+        return sEditoriales;
+    }
+    
     public int agregarEditorial(String nombre, String direccion) {
         Editorial editorial = null;
         
@@ -40,6 +51,7 @@ public class ServicioEditoriales {
         if (buscarEditorial(editorial.getNombre()) == null) {
             editoriales.add(editorial);
             servicioD.darAvisoD();
+            servicioB.darAvisoB();
             return 0;
         }
         return 2;
@@ -63,6 +75,7 @@ public class ServicioEditoriales {
         Editorial edi = buscarEditorial(titulo);
         eliminado = editoriales.remove(edi);
         servicioD.darAvisoD();
+        servicioB.darAvisoB();
         return eliminado;
     }
     
@@ -82,6 +95,7 @@ public class ServicioEditoriales {
         int index = editoriales.indexOf(editorialAntigua);
         editoriales.set(index, nueva);
         servicioD.darAvisoD();
+        servicioB.darAvisoB();
         return 0;
     }
     

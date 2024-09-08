@@ -14,11 +14,22 @@ import java.util.ArrayList;
 public class ServicioInterfazD {
     
     private ArrayList<IclaseD> interesadosEditoriales;
+    private static ServicioInterfazD sInterfazD;
     
-    public ServicioInterfazD()
+    private ServicioInterfazD()
     {
         interesadosEditoriales = new ArrayList<IclaseD>();
     }
+    
+    public synchronized static ServicioInterfazD getServicioInterfazD(){
+    
+        if (sInterfazD == null){
+            sInterfazD = new ServicioInterfazD();
+        }
+        
+        return sInterfazD;
+    }
+    
     public void addGUIInteresadaD(IclaseD interesada){
         interesadosEditoriales.add(interesada);
     }

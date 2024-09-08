@@ -13,10 +13,20 @@ import java.util.ArrayList;
  */
 public class ServicioInterfazB {
     private ArrayList<IclaseB> interesadosLibros;
+    private static ServicioInterfazB sInterfazB;
     
-    public ServicioInterfazB()
+    private ServicioInterfazB()
     {
         interesadosLibros = new ArrayList<IclaseB>();
+    }
+    
+    public synchronized static ServicioInterfazB getServicioInterfazB(){
+    
+        if (sInterfazB == null){
+            sInterfazB = new ServicioInterfazB();
+        }
+        
+        return sInterfazB;
     }
     
     public void addGUIInteresadaB(IclaseB interesada){

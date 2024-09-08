@@ -22,14 +22,25 @@ public class ServicioPublicaciones {
     private ArrayList<Publicacion> publicaciones;
     private ServicioInterfazB servicioB;
     private ServicioInterfazC servicioC;
+    private static ServicioPublicaciones sPublicaciones;
+    
     
     //Constructor
-    public ServicioPublicaciones() {
+    private ServicioPublicaciones() {
         publicaciones = new ArrayList<>();
-        servicioB = new ServicioInterfazB();
-        servicioC = new ServicioInterfazC();
+        servicioB = ServicioInterfazB.getServicioInterfazB();
+        servicioC = ServicioInterfazC.getServicioInterfazC();
     }
-
+    
+    public synchronized static ServicioPublicaciones getServicioPublicaciones(){
+    
+        if (sPublicaciones == null){
+            sPublicaciones = new ServicioPublicaciones();
+        }
+        
+        return sPublicaciones;
+    }
+    
     //Métodos
     public int agregarLibro(String titulo, String autor, double precio, boolean tapaDura, Editorial editorial) 
     {

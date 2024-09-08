@@ -21,12 +21,13 @@ public class GUI extends javax.swing.JFrame {
     
     private ServicioEditoriales servicioEditorial;
     private ServicioPublicaciones servicioPublicacion;
+    
     /**
      * Creates new form GUI
      */
     public GUI() {
-        servicioEditorial = new ServicioEditoriales();
-        servicioPublicacion = new ServicioPublicaciones();
+        servicioEditorial = ServicioEditoriales.getServicioEditoriales();
+        servicioPublicacion = ServicioPublicaciones.getServicioPublicaciones();
         initComponents();
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

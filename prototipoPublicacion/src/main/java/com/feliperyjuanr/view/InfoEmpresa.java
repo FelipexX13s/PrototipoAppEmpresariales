@@ -62,55 +62,55 @@ public class InfoEmpresa extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 255, 204));
         jLabel1.setText("Info Empresa");
 
-        lblTitulo.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         lblTitulo.setText("Nombre");
 
         txtNit.setEditable(false);
-        txtNit.setEnabled(false);
+        txtNit.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         txtNit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNitActionPerformed(evt);
             }
         });
 
-        lblNit.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        lblNit.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         lblNit.setText("NIT");
 
-        lblDireccion.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        lblDireccion.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         lblDireccion.setText("Direccion");
 
-        lblTelefono.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        lblTelefono.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         lblTelefono.setText("Telefono");
 
-        lblFecha.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
+        lblFecha.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         lblFecha.setText("Fecha Fundacion");
 
-        txtNit.setEditable(false);
-        txtNombre.setEnabled(false);
+        txtNombre.setEditable(false);
+        txtNombre.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         txtNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNombreActionPerformed(evt);
             }
         });
 
-        txtNit.setEditable(false);
-        txtDireccion.setEnabled(false);
+        txtDireccion.setEditable(false);
+        txtDireccion.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         txtDireccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtDireccionActionPerformed(evt);
             }
         });
 
-        txtNit.setEditable(false);
-        txtFecha.setEnabled(false);
+        txtFecha.setEditable(false);
+        txtFecha.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         txtFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFechaActionPerformed(evt);
             }
         });
 
-        txtNit.setEditable(false);
-        txtTelefono.setEnabled(false);
+        txtTelefono.setEditable(false);
+        txtTelefono.setFont(new java.awt.Font("Arial Black", 0, 12)); // NOI18N
         txtTelefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTelefonoActionPerformed(evt);
