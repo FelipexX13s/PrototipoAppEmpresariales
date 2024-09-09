@@ -72,6 +72,7 @@ com\feliperyjuanr\view\ListarRevistas$2.class
 com\feliperyjuanr\view\ListarLibros.class
 com\feliperyjuanr\view\EliminarLibro$3.class
 com\feliperyjuanr\view\InfoEmpresa$3.class
+com\feliperyjuanr\services\ServicioEmpresa.class
 com\feliperyjuanr\view\EliminarRevista$1.class
 com\feliperyjuanr\view\BuscarEditorial.class
 com\feliperyjuanr\view\GUI$10.class

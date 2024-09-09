@@ -22,7 +22,7 @@ public class ActualizarEditorial extends javax.swing.JFrame {
         this.servicioEditorial = servicioEditorial;
         antiguoNombre = "";
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
 
@@ -215,6 +215,7 @@ public class ActualizarEditorial extends javax.swing.JFrame {
         {
             lblEditorial.setForeground(new java.awt.Color(244, 67, 54));
             jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(244, 67, 54), 2, true));
+            txtNombreBuscar.setText("");
             txtNombre.setText("");
             txtDireccion.setText("");
             antiguoNombre = "";
@@ -235,8 +236,10 @@ public class ActualizarEditorial extends javax.swing.JFrame {
             case 0:
             {
                 JOptionPane.showMessageDialog(this, "Editorial actuaizada exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                txtNombreBuscar.setText("");
                 txtNombre.setText("");
                 txtDireccion.setText("");
+                
                 break;
             }
             case 1:

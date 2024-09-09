@@ -11,15 +11,16 @@ import javax.swing.JOptionPane;
  *
  * @author juanp
  */
-public class CalcularPrecioRevistas extends javax.swing.JFrame {
+public class CalcularPrecioRevistas extends javax.swing.JFrame implements IRevistaInteresada {
     private ServicioPublicaciones servicioPublicacion;
     /**
      * Creates new form CalcularPrecioRevistas
      */
     public CalcularPrecioRevistas(ServicioPublicaciones servicioPublicacion) {
         this.servicioPublicacion = servicioPublicacion;
+        servicioPublicacion.addInteresadaC(this);
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
 
@@ -125,4 +126,16 @@ public class CalcularPrecioRevistas extends javax.swing.JFrame {
     private javax.swing.JLabel lblPrecioTotal;
     private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void cambioRevista() {
+        if(servicioPublicacion.listarRevistas().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "Error: No hay ninguna Revista para calcular precios!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        else
+        {
+            txtTotal.setText("$ "+servicioPublicacion.calcularPrecioTotal("Revista"));
+        }
+    }
 }

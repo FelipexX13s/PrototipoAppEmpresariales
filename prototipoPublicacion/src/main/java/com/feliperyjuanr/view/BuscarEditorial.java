@@ -19,7 +19,7 @@ public class BuscarEditorial extends javax.swing.JFrame {
     public BuscarEditorial(ServicioEditoriales servicioEditorial) {
         this.servicioEditorial = servicioEditorial;
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
 

@@ -4,7 +4,7 @@
  */
 package com.feliperyjuanr.view;
 
-import com.feliperyjuanr.model.Empresa;
+import com.feliperyjuanr.services.ServicioEmpresa;
 import java.time.format.DateTimeFormatter;
 
 /**
@@ -13,22 +13,24 @@ import java.time.format.DateTimeFormatter;
  */
 public class InfoEmpresa extends javax.swing.JFrame {
 
-    private Empresa empresa = Empresa.getEmpresa();
+    private ServicioEmpresa servicioEmpresa = new ServicioEmpresa();
     
     /**
      * Creates new form InfoEmpresa
      */
     public InfoEmpresa() {
-        setLocationRelativeTo(null);
+        
         initComponents();
-        txtNombre.setText(empresa.getNombre());
-        txtNit.setText(empresa.getNit());
-        txtDireccion.setText(empresa.getDireccion());
-        txtTelefono.setText(empresa.getTelefono());
+        setLocationRelativeTo(this);
+        
+        txtNombre.setText(servicioEmpresa.getEmpresa().getNombre());
+        txtNit.setText(servicioEmpresa.getEmpresa().getNit());
+        txtDireccion.setText(servicioEmpresa.getEmpresa().getDireccion());
+        txtTelefono.setText(servicioEmpresa.getEmpresa().getTelefono());
         
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         
-        txtFecha.setText(empresa.getFechaFundacion().format(formatter));
+        txtFecha.setText(servicioEmpresa.getEmpresa().getFechaFundacion().format(formatter));
     }
 
     /**

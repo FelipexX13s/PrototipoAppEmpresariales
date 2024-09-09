@@ -10,15 +10,16 @@ import javax.swing.JOptionPane;
  *
  * @author juanp
  */
-public class CalcularPrecioLibros extends javax.swing.JFrame {
+public class CalcularPrecioLibros extends javax.swing.JFrame implements ILibroInteresado {
     private ServicioPublicaciones servicioPublicacion;
     /**
      * Creates new form CalcularPrecioLibros
      */
     public CalcularPrecioLibros(ServicioPublicaciones servicioPublicacion) {
         this.servicioPublicacion = servicioPublicacion;
+        servicioPublicacion.addInteresadaB(this);
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
 
@@ -135,4 +136,16 @@ public class CalcularPrecioLibros extends javax.swing.JFrame {
     private javax.swing.JLabel lblPrecioTotal;
     private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void cambioLibro() {
+        if(servicioPublicacion.listarLibros().isEmpty())
+        {
+            JOptionPane.showMessageDialog(this, "Error: No hay ningun Libro para calcular precios!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        else
+        {
+            txtTotal.setText("$ "+servicioPublicacion.calcularPrecioTotal("Libro"));
+        }
+    }
 }

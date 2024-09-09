@@ -22,7 +22,7 @@ public class ActualizarRevista extends javax.swing.JFrame {
         this.servicioPublicacion = servicioPublicacion;
         antiguoTitulo= "";
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
 
@@ -259,6 +259,7 @@ public class ActualizarRevista extends javax.swing.JFrame {
         {
             lblRevista.setForeground(new java.awt.Color(244, 67, 54));
             jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(244, 67, 54), 2, true));
+            txtTituloBuscar.setText("");
             txtTitulo.setText("");
             txtAutor.setText("");
             txtPrecio.setText("");
@@ -288,6 +289,7 @@ public class ActualizarRevista extends javax.swing.JFrame {
                 case 0:
                 {
                     JOptionPane.showMessageDialog(this, "Revista actualizada exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                    txtTituloBuscar.setText("");
                     txtTitulo.setText("");
                     txtAutor.setText("");
                     txtPrecio.setText("");

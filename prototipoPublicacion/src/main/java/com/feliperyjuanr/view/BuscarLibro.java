@@ -19,7 +19,7 @@ public class BuscarLibro extends javax.swing.JFrame {
     public BuscarLibro(ServicioPublicaciones servicioPublicacion) {
         this.servicioPublicacion = servicioPublicacion;
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
 

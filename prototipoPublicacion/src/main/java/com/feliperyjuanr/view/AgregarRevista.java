@@ -22,7 +22,7 @@ public class AgregarRevista extends javax.swing.JFrame {
         this.servicioPublicacion = servicioPublicacion;
         this.servicioEditorial = servicioEditorial;
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
 

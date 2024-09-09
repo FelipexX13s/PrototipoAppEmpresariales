@@ -20,7 +20,7 @@ public class AgregarEditorial extends javax.swing.JFrame {
     public AgregarEditorial(ServicioEditoriales servicioEditorial) {
         this.servicioEditorial = servicioEditorial;
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
 

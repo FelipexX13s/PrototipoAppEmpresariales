@@ -24,7 +24,7 @@ public class ActualizarLibro extends javax.swing.JFrame {
         this.servicioEditorial = servicioEditorial;
         antiguoTitulo = "";
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
 
@@ -271,6 +271,7 @@ public class ActualizarLibro extends javax.swing.JFrame {
         {
             lblLibro.setForeground(new java.awt.Color(244, 67, 54));
             jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(244, 67, 54), 2, true));
+            cbxEditorial.setSelectedIndex(-1);
             txtTitulo.setText("");
             txtAutor.setText("");
             txtPrecio.setText("");
@@ -304,10 +305,13 @@ public class ActualizarLibro extends javax.swing.JFrame {
                 case 0:
                 {
                     JOptionPane.showMessageDialog(this, "Libro actualizado exitosamente!", "Confirmación", JOptionPane.INFORMATION_MESSAGE);
+                    txtTituloBuscar.setText("");
                     txtTitulo.setText("");
                     txtAutor.setText("");
                     txtPrecio.setText("");
+                    cbxEditorial.setSelectedIndex(-1);
                     chxTapaDura.setSelected(false);
+                   
                     break;
                 }
                 case 1:

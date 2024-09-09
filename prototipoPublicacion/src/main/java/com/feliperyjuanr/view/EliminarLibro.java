@@ -18,7 +18,7 @@ public class EliminarLibro extends javax.swing.JFrame {
     public EliminarLibro(ServicioPublicaciones servicioPublicacion ) {
         this.servicioPublicacion = servicioPublicacion;
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
 

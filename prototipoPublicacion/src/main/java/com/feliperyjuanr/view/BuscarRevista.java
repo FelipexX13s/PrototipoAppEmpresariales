@@ -20,7 +20,7 @@ public class BuscarRevista extends javax.swing.JFrame {
     public BuscarRevista(ServicioPublicaciones servicioPublicacion) {
         this.servicioPublicacion = servicioPublicacion;
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
 

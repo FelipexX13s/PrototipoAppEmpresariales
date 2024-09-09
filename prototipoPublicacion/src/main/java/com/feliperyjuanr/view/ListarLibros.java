@@ -23,7 +23,7 @@ public class ListarLibros extends javax.swing.JFrame implements ILibroInteresado
         this.servicioPublicacion = servicioPublicacion;
         servicioPublicacion.addInteresadaB(this);
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
     

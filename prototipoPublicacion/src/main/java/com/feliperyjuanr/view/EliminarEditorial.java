@@ -18,7 +18,7 @@ public class EliminarEditorial extends javax.swing.JFrame {
     public EliminarEditorial(ServicioEditoriales servicioEditorial ) {
         this.servicioEditorial = servicioEditorial;
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
 
@@ -226,7 +226,7 @@ public class EliminarEditorial extends javax.swing.JFrame {
         // TODO add your handling code here:
         int confirmacion = JOptionPane.showConfirmDialog(
             null, 
-            "¿Estás seguro de que deseas eliminar este Libro?", 
+            "¿Estás seguro de que deseas eliminar esta Editorial?", 
             "Confirmación de eliminación", 
             JOptionPane.YES_NO_OPTION
         );

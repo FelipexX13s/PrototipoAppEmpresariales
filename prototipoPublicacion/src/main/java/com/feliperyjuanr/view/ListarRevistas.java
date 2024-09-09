@@ -22,7 +22,7 @@ public class ListarRevistas extends javax.swing.JFrame implements IRevistaIntere
         this.servicioPublicacion = servicioPublicacion;
         servicioPublicacion.addInteresadaC(this);
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
     

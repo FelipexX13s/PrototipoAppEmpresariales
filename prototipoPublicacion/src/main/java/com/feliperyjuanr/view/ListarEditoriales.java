@@ -24,7 +24,7 @@ public class ListarEditoriales extends javax.swing.JFrame implements IEditorialI
         this.servicioEditorial = servicioEditorial;
         servicioEditorial.addInteresadaD(this);
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
     

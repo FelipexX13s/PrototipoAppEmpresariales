@@ -27,15 +27,17 @@ public class AgregarLibro extends javax.swing.JFrame {
         this.servicioEditorial = servicioEditorial;
 
         if (!servicioEditorial.listarEditoriales().isEmpty()) {
-            setLocationRelativeTo(null);
+            
             setResizable(false);
             initComponents();
+            setLocationRelativeTo(this);
             cbxEditorial.removeAll();
 
             for (int i = 0; i < servicioEditorial.listarEditoriales().size(); i++) {
                 cbxEditorial.addItem(servicioEditorial.listarEditoriales().get(i).getNombre());
             }
             setVisible(true);
+            cbxEditorial.setSelectedIndex(-1);
 
         } else {
             JOptionPane.showMessageDialog(this, "Error: No puede agregar un libro si no existen Editoriales!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -229,6 +231,7 @@ public class AgregarLibro extends javax.swing.JFrame {
                     txtTitulo.setText("");
                     txtAutor.setText("");
                     txtPrecio.setText("");
+                    cbxEditorial.setSelectedIndex(-1);
                     chxTapaDura.setSelected(false);
                     break;
                 }

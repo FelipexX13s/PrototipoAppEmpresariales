@@ -1,34 +1,35 @@
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\AgregarEditorial.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\IRevistaInteresada.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ListarEditoriales.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\model\Suscribible.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\CalcularPrecioLibros.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\model\Editorial.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\services\ServicioPublicaciones.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ActualizarLibro.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\InfoEmpresa.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\services\ServicioGUIEditorial.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ActualizarRevista.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\prototipoPublicacion\Main.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ActualizarEditorial.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ListarRevistas.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\services\ServicioGUIRevista.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\BuscarRevista.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\model\Empresa.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\CalcularPrecioRevistas.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\EliminarRevista.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\BuscarEditorial.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\AgregarLibro.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\IEditorialInteresado.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\AgregarRevista.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ILibroInteresado.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ListarLibros.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\services\ServicioEditoriales.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\model\Revista.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\EliminarEditorial.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\GUI.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\model\Publicacion.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\services\ServicioGUILibro.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\EliminarLibro.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\model\Libro.java
-C:\Users\Juan\Downloads\2024\2024B\Desarrollo de Aplicaciones Empresariales\Proyecto1\Proyecto completo\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\BuscarLibro.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\EliminarLibro.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\GUI.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\model\Empresa.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\IEditorialInteresado.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\AgregarEditorial.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\model\Libro.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\model\Revista.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\model\Suscribible.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\IRevistaInteresada.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\AgregarRevista.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\BuscarLibro.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\EliminarEditorial.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\BuscarRevista.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ActualizarLibro.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ActualizarEditorial.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ILibroInteresado.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\prototipoPublicacion\Main.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\model\Publicacion.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\services\ServicioPublicaciones.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\services\ServicioGUIRevista.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\services\ServicioEmpresa.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ListarEditoriales.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ListarLibros.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\CalcularPrecioRevistas.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\CalcularPrecioLibros.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\EliminarRevista.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\AgregarLibro.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\services\ServicioGUILibro.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ActualizarRevista.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\services\ServicioEditoriales.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\InfoEmpresa.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\BuscarEditorial.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\model\Editorial.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\services\ServicioGUIEditorial.java
+C:\Users\juanp\Desktop\xd\PrototipoAppEmpresariales\prototipoPublicacion\src\main\java\com\feliperyjuanr\view\ListarRevistas.java

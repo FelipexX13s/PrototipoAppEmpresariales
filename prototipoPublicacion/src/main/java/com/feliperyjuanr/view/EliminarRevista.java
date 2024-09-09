@@ -19,7 +19,7 @@ public class EliminarRevista extends javax.swing.JFrame {
     public EliminarRevista(ServicioPublicaciones servicioPublicacion) {
         this.servicioPublicacion = servicioPublicacion;
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(this);
         setResizable(false);
     }
 
