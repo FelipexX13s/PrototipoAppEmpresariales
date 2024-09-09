@@ -234,16 +234,25 @@ public class EliminarEditorial extends javax.swing.JFrame {
         // Verificar la respuesta del usuario
         if (confirmacion == JOptionPane.YES_OPTION) {
             // Código para eliminar el elemento
-            servicioEditorial.eliminarEditorial(txtNombreBuscar.getText());
-            JOptionPane.showMessageDialog(this, "Editorial eliminada!", "Confirmacion", JOptionPane.INFORMATION_MESSAGE);
-            txtNombre.setText("");
-            txtDireccion.setText("");
-            lblEditorial.setForeground(new java.awt.Color(244, 67, 54));
-            jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(244, 67, 54), 2, true));
-            btnEliminar.setEnabled(false);
+            
+            if(servicioEditorial.eliminarEditorial(txtNombreBuscar.getText()))
+            {
+                JOptionPane.showMessageDialog(this, "Editorial eliminada!", "Confirmacion", JOptionPane.INFORMATION_MESSAGE);
+                txtNombre.setText("");
+                txtDireccion.setText("");
+                lblEditorial.setForeground(new java.awt.Color(244, 67, 54));
+                jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(244, 67, 54), 2, true));
+                btnEliminar.setEnabled(false);
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(this, "Editorial en uso!", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            
+            
 
         } else {
-            JOptionPane.showMessageDialog(this, "No se elimino la editorial!", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "No se elimino la editorial! ", "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnEliminarActionPerformed
 

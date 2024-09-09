@@ -5,6 +5,7 @@
 package com.feliperyjuanr.services;
 
 import com.feliperyjuanr.model.Editorial;
+import com.feliperyjuanr.model.Libro;
 import java.util.ArrayList;
 import com.feliperyjuanr.view.IEditorialInteresado;
 
@@ -18,6 +19,7 @@ public class ServicioEditoriales {
     private ArrayList<Editorial> editoriales;
     private ServicioGUIEditorial servicioD;
     private static ServicioEditoriales sEditoriales;
+    private static ServicioPublicaciones sPublicaciones;
     private ServicioGUILibro servicioB;
     
     
@@ -25,6 +27,7 @@ public class ServicioEditoriales {
         editoriales = new ArrayList<>();
         servicioD = ServicioGUIEditorial.getServicioInterfazD();
         servicioB = ServicioGUILibro.getServicioInterfazB();
+        sPublicaciones = ServicioPublicaciones.getServicioPublicaciones();
     }
     
     public synchronized static ServicioEditoriales getServicioEditoriales(){
@@ -70,13 +73,26 @@ public class ServicioEditoriales {
         return null;
     }
     
-    public boolean eliminarEditorial(String titulo) {
-        boolean eliminado = false;
+    public boolean eliminarEditorial(String titulo) 
+    {
         Editorial edi = buscarEditorial(titulo);
-        eliminado = editoriales.remove(edi);
-        servicioD.darAvisoD();
-        servicioB.darAvisoB();
-        return eliminado;
+        
+        if (edi != null) 
+        {
+            for (Libro libro : sPublicaciones.listarLibros()) 
+            {
+                if (libro.getEditorial().getNombre().equals(titulo)) 
+                {
+                    return false;
+                }
+            }
+            editoriales.remove(edi);
+            servicioD.darAvisoD();
+            servicioB.darAvisoB();
+            return true;
+        }
+
+        return false;
     }
     
     public int actualizarEditorial(String nombreAntiguo, String nombre, String direccion) {
