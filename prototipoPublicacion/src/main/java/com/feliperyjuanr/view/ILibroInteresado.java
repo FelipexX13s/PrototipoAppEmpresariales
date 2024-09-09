@@ -8,6 +8,6 @@ package com.feliperyjuanr.view;
  *
  * @author juanp
  */
-public interface IclaseC {
-        public void cambioRevista();
+public interface ILibroInteresado {
+        public void cambioLibro();
 }

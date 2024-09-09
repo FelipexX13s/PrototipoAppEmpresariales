@@ -5,8 +5,8 @@
 package com.feliperyjuanr.services;
 
 import com.feliperyjuanr.model.Editorial;
-import com.feliperyjuanr.view.IclaseD;
 import java.util.ArrayList;
+import com.feliperyjuanr.view.IEditorialInteresado;
 
 /**
  *
@@ -16,15 +16,15 @@ public class ServicioEditoriales {
 
     //Atributos
     private ArrayList<Editorial> editoriales;
-    private ServicioInterfazD servicioD;
+    private ServicioGUIEditorial servicioD;
     private static ServicioEditoriales sEditoriales;
-    private ServicioInterfazB servicioB;
+    private ServicioGUILibro servicioB;
     
     
     private ServicioEditoriales() {
         editoriales = new ArrayList<>();
-        servicioD = ServicioInterfazD.getServicioInterfazD();
-        servicioB = ServicioInterfazB.getServicioInterfazB();
+        servicioD = ServicioGUIEditorial.getServicioInterfazD();
+        servicioB = ServicioGUILibro.getServicioInterfazB();
     }
     
     public synchronized static ServicioEditoriales getServicioEditoriales(){
@@ -97,12 +97,12 @@ public class ServicioEditoriales {
         return 0;
     }
     
-    public void addInteresadaD(IclaseD interesada)
+    public void addInteresadaD(IEditorialInteresado interesada)
     {
         servicioD.addGUIInteresadaD(interesada);
     }
     
-    public void deleteInteresadaD(IclaseD interesada)
+    public void deleteInteresadaD(IEditorialInteresado interesada)
     {
         servicioD.deleteInteresadaD(interesada);
     }

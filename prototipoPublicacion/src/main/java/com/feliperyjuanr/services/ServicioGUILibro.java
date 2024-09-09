@@ -4,41 +4,41 @@
  */
 package com.feliperyjuanr.services;
 
-import com.feliperyjuanr.view.IclaseB;
 import java.util.ArrayList;
+import com.feliperyjuanr.view.ILibroInteresado;
 
 /**
  *
  * @author juanp
  */
-public class ServicioInterfazB {
-    private ArrayList<IclaseB> interesadosLibros;
-    private static ServicioInterfazB sInterfazB;
+public class ServicioGUILibro {
+    private ArrayList<ILibroInteresado> interesadosLibros;
+    private static ServicioGUILibro sInterfazB;
     
-    private ServicioInterfazB()
+    private ServicioGUILibro()
     {
-        interesadosLibros = new ArrayList<IclaseB>();
+        interesadosLibros = new ArrayList<ILibroInteresado>();
     }
     
-    public synchronized static ServicioInterfazB getServicioInterfazB(){
+    public synchronized static ServicioGUILibro getServicioInterfazB(){
     
         if (sInterfazB == null){
-            sInterfazB = new ServicioInterfazB();
+            sInterfazB = new ServicioGUILibro();
         }
         
         return sInterfazB;
     }
     
-    public void addGUIInteresadaB(IclaseB interesada){
+    public void addGUIInteresadaB(ILibroInteresado interesada){
         interesadosLibros.add(interesada);
     }
     
-    public void deleteInteresadaB(IclaseB interesada){
+    public void deleteInteresadaB(ILibroInteresado interesada){
         interesadosLibros.remove(interesada);
     }
     
     public void darAvisoB(){
-        for (IclaseB gui : interesadosLibros){
+        for (ILibroInteresado gui : interesadosLibros){
             gui.cambioLibro();
         }
     }

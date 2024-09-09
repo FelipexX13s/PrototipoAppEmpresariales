@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author juanp
  */
-public class ListarLibros extends javax.swing.JFrame implements IclaseB {
+public class ListarLibros extends javax.swing.JFrame implements ILibroInteresado {
 
     private ServicioPublicaciones servicioPublicacion;
 

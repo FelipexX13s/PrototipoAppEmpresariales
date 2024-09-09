@@ -8,9 +8,9 @@ import com.feliperyjuanr.model.Editorial;
 import com.feliperyjuanr.model.Libro;
 import com.feliperyjuanr.model.Publicacion;
 import com.feliperyjuanr.model.Revista;
-import com.feliperyjuanr.view.IclaseB;
-import com.feliperyjuanr.view.IclaseC;
 import java.util.ArrayList;
+import com.feliperyjuanr.view.ILibroInteresado;
+import com.feliperyjuanr.view.IRevistaInteresada;
 
 /**
  *
@@ -20,16 +20,16 @@ public class ServicioPublicaciones {
 
     //Atributos
     private ArrayList<Publicacion> publicaciones;
-    private ServicioInterfazB servicioB;
-    private ServicioInterfazC servicioC;
+    private ServicioGUILibro servicioB;
+    private ServicioGUIRevista servicioC;
     private static ServicioPublicaciones sPublicaciones;
     
     
     //Constructor
     private ServicioPublicaciones() {
         publicaciones = new ArrayList<>();
-        servicioB = ServicioInterfazB.getServicioInterfazB();
-        servicioC = ServicioInterfazC.getServicioInterfazC();
+        servicioB = ServicioGUILibro.getServicioInterfazB();
+        servicioC = ServicioGUIRevista.getServicioInterfazC();
     }
     
     public synchronized static ServicioPublicaciones getServicioPublicaciones(){
@@ -214,22 +214,22 @@ public class ServicioPublicaciones {
         return 2;
     }
     
-    public void addInteresadaB(IclaseB interesada)
+    public void addInteresadaB(ILibroInteresado interesada)
     {
         servicioB.addGUIInteresadaB(interesada);
     }
     
-    public void addInteresadaC(IclaseC interesada)
+    public void addInteresadaC(IRevistaInteresada interesada)
     {
         servicioC.addGUIInteresadaC(interesada);
     }
     
-    public void deleteInteresadaB(IclaseB interesada)
+    public void deleteInteresadaB(ILibroInteresado interesada)
     {
         servicioB.deleteInteresadaB(interesada);
     }
     
-    public void deleteInteresadaC(IclaseC interesada)
+    public void deleteInteresadaC(IRevistaInteresada interesada)
     {
         servicioC.deleteInteresadaC(interesada);
     }

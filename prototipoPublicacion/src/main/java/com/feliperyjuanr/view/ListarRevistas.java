@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author juanp
  */
-public class ListarRevistas extends javax.swing.JFrame implements IclaseC {
+public class ListarRevistas extends javax.swing.JFrame implements IRevistaInteresada {
     private ServicioPublicaciones servicioPublicacion;
 
     /**

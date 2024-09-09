@@ -5,6 +5,7 @@
 package com.feliperyjuanr.view;
 
 import com.feliperyjuanr.services.ServicioEditoriales;
+import java.awt.Color;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -12,7 +13,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author juanp
  */
-public class ListarEditoriales extends javax.swing.JFrame implements IclaseD {
+public class ListarEditoriales extends javax.swing.JFrame implements IEditorialInteresado {
 
     private ServicioEditoriales servicioEditorial;
 
@@ -39,6 +40,21 @@ public class ListarEditoriales extends javax.swing.JFrame implements IclaseD {
                 servicioEditorial.listarEditoriales().get(i).getDireccion()
             });
         }
+        if (tblEditoriales.getRowCount() > 0) {
+        tblEditoriales.setRowSelectionInterval(tblEditoriales.getRowCount() - 1, tblEditoriales.getRowCount() - 1);
+        tblEditoriales.setSelectionBackground(new java.awt.Color(156, 39, 176));
+        tblEditoriales.setSelectionForeground(Color.WHITE);
+
+        // Crear un Timer que cambiará el color a blanco después de 1 segundo
+        javax.swing.Timer timer = new javax.swing.Timer(2000, e -> {
+            tblEditoriales.setSelectionBackground(Color.WHITE);
+            tblEditoriales.setSelectionForeground(Color.BLACK);
+            tblEditoriales.clearSelection(); // Limpiar la selección para quitar el resaltado
+        });
+        timer.setRepeats(false); // El Timer solo debe ejecutarse una vez
+        timer.start(); // Iniciar el Timer
+        }
+        
     }
     
     @Override
